@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="kontakt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-bar">
+        <div style="margin-left: 40px;"> 
+            <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" class="instagram-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"  >
+                <!-- Outer square with rounded corners -->
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        
+                <!-- Inner circle (lens) - Adjusted position slightly downward -->
+                <circle cx="12" cy="13" r="4"></circle>
+        
+                <!-- Small dot (flash) -->
+                <circle cx="17.5" cy="6.5" r="0.8"></circle>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/YOUR_USERNAME" target="_blank" class="facebook-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Outer square with rounded corners -->
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                
+                <!-- Facebook 'f' -->
+                <path d="M14 7h-2c-1.1 0-2 .9-2 2v2H8v3h2v5h3v-5h2.5l.5-3H13V9.5c0-.3.2-.5.5-.5H15V7z"></path>
+            </svg>
+        </a>
+       
+                
+        </div>
+        
+        <p>Dekor Dom 021</p>
+        
+            <!-- <nav>
+            <label class="hamburger">☰</label>
+            <ul class="menu">
+              <li><a href="#">Početna</a></li>
+              <li><a href="#">O nama</a></li>
+            </ul>
+        </nav>  --> 
+       
+       
+        
+      
+       <!-- <button id="hamburger" class="hamburger">☰</button>--> 
+       
+       <a href="index.html"> <i class="fa fa-home"></i></a>
+
+
+      
+          
+        
+        
+    </div>
+
+
+     <p class="gore">Stojimo Vam na raspolaganju – kontaktirajte nas već danas!</p>
+    <div class="info">
+        
+       
+  <!-- Telephone -->
+  <!-- Gmail (Email) -->
+  <!-- Instagram -->
+  
+  <div style="margin-left: 100px;">
+    <p class="kp">Kontakt podaci</p>
+    <div class="crtica"></div>
+    <div> <i class="fa-solid fa-location-dot"></i> <p class="informacija">Branka Vukosavljevića 37</p>      <div class="obl"> <i class="fas fa-hand-point-right"> <p class="oblak">Proverite lokaciju na mapi</p>  </i>
+    </div>
+     <!-- Location Pin --></div>
+<div><i class="fa-solid fa-phone"></i> <p class="informacija">062/811-38-21</p> <i class="fa-regular fa-copy brj"></i></div>
+<div><i class="fa-solid fa-envelope"></i><p class="informacija">stanislavnovisad@gmail.com</p><i class="fa-regular fa-copy mejl"></i></div> 
+<div><i class="fa-brands fa-instagram"></i><p class="informacija">dekordom021</p><i class="fa-regular fa-copy ig"></i></div>
+   </div>
+    <div class="map"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.1457739449766!2d19.774371189096822!3d45.24764699648064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b11e78388a287%3A0x3cf6f31f1c0ff1b1!2z0JHRgNCw0L3QutCwINCS0YPQutC-0YHQsNCy0ZnQtdCy0LjRm9CwIDM3LCDQktC10YLQtdGA0L3QuNC6!5e1!3m2!1ssr!2srs!4v1739315662810!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe></div>
+     
+</div>
+<script>
+
+let broj = document.querySelector('.brj');
+broj.addEventListener('click', () => {
+    navigator.clipboard.writeText("0628113821")
+    
+});
+let mejl = document.querySelector('.mejl');
+mejl.addEventListener('click', () => {
+    navigator.clipboard.writeText("stanislavnovisad@gmail.com")
+    
+});
+</script>
+</body>
+</html>

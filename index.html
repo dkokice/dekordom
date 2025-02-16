@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="top-bar">
+        <div style="margin-left: 40px;"> 
+            <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" class="instagram-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"  >
+                <!-- Outer square with rounded corners -->
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        
+                <!-- Inner circle (lens) - Adjusted position slightly downward -->
+                <circle cx="12" cy="13" r="4"></circle>
+        
+                <!-- Small dot (flash) -->
+                <circle cx="17.5" cy="6.5" r="0.8"></circle>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/YOUR_USERNAME" target="_blank" class="facebook-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Outer square with rounded corners -->
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                
+                <!-- Facebook 'f' -->
+                <path d="M14 7h-2c-1.1 0-2 .9-2 2v2H8v3h2v5h3v-5h2.5l.5-3H13V9.5c0-.3.2-.5.5-.5H15V7z"></path>
+            </svg>
+        </a>
+       
+                
+        </div>
+        
+        <p>Dekor Dom 021</p>
+        
+            <!-- <nav>
+            <label class="hamburger">☰</label>
+            <ul class="menu">
+              <li><a href="#">Početna</a></li>
+              <li><a href="#">O nama</a></li>
+            </ul>
+        </nav>  --> 
+       
+       
+        
+      
+       <!-- <button id="hamburger" class="hamburger">☰</button>--> 
+       
+      <a href="prodavnica.html"> <i class="fas fa-shopping-cart rol"></i></a> 
+
+      
+          
+        
+        
+    </div>
+    <div class="linija">.</div>
+    <div class="linija2">.</div>
+   
+
+    <section class="hero-section">
+        <div class="hero-content">
+          <div class="image-content">
+            <!--<img src="cigle.jpg" alt="Facade Design">-->.
+          </div>
+          <div class="text-content">
+            <h1 class="prvi-naslov">Vaš Prostor, Naš Pečat</h1>
+            
+            <p class="prvi">Dekor Dom 021 – Vaš partner za savršene zidove i fasade od 2017. godine.</p>
+            <p class="drugi">Specijalizovani smo za molerske, fasaderske i gipsane radove koji pretvaraju vaše ideje u stvarnost. Sa pažnjom prema detaljima i bogatim iskustvom, gradimo lepotu koja traje. Poverite nam vaš prostor – mi ćemo ga učiniti savršenim.</p>
+            
+          
+            <h1 class="naslov2">Inovativni Pristupi, Savremeni Rezultati</h1>
+            <p class="prvi2">U Dekor Dom 021, uvek smo korak ispred. Koristimo najnovije tehnologije i materijale kako bismo vam pružili rešenja koja nisu samo lepa, već i dugotrajna i ekološki održiva.</p>
+          <!-- <p class="drugi2">Naš tim redovno prati globalne trendove u dizajnu i građevinarstvu, što nam omogućava da vam ponudimo najsavremenije ideje za vaš prostor. </p> -->  
+            <a href="kontakt.html" class="cta-button">Kontaktirajte nas danas i zakažite besplatnu procenu!</a>  
+        </div>
+        </div>
+        <div class = "cover">
+             
+            <img src="unnamed-removebg-preview.png" class="valjak jen">
+              
+        </div>
+        <div class="cover2">
+            <img src="unnamed-removebg-preview.png" class="valjak dva">
+        </div>
+        <div class = "cover3">
+             
+            <img src="unnamed-removebg-preview.png" class="valjak jen">
+              
+        </div>
+      </section>
+      
+   
+    <div class="usluge">
+        <h1>Usluge koje nudimo</h1>
+         <div class="lin"></div>
+         <div class="gg">
+            <div><img src="stiropor.jpg" >
+            <p class="ime">Demit fasada sa stiroporom</p>
+        </div>
+            
+        <div><img src="vuna.jpg" >
+            <p class="ime">Demit fasada sa kamenom vunom</p>
+        </div>
+        <div><img src="klinker.jpg" >
+            <p class="ime">Lepljenje klinkera</p>
+        </div>
+
+         </div>
+    </div>
+    
+    <script>
+       
+
+    // Animate roller moving down
+    
+        let prnsl = document.querySelector('.prvi-naslov');
+        setTimeout(()=> {
+            prnsl.classList.add("prikazi3");
+        }, 3050);
+        let pr = document.querySelector('.prvi');
+        let dr = document.querySelector('.drugi');
+        let nas = document.querySelector('.naslov2');
+        let pr2 = document.querySelector('.prvi2');
+        let dr2 = document.querySelector('.drugi2');
+        setTimeout(()=> {
+            pr.classList.add("dodaj");
+            dr.classList.add("dodaj");
+        }, 3600);
+        setTimeout(()=> {
+            nas.classList.add("dodaj1");
+           
+        }, 4100);
+       setTimeout(()=> {
+            pr2.classList.add("dodaj");
+            dr2.classList.add("dodaj");
+        }, 4550);
+        document.querySelector(".hamburger").addEventListener("click", function() {
+            document.querySelector(".menu").classList.toggle("show");
+        });
+      
+        // Toggle visibility with CSS
+        document.styleSheets[0].insertRule(".menu.show { display: block; }", 0);
+        document.getElementById("hamburger").addEventListener("click", function() {
+    document.getElementById("sidebar").classList.toggle("active");
+    document.querySelector(".hamburger").style.color = "transparent";
+});
+
+document.getElementById("closeBtn").addEventListener("click", function() {
+    document.getElementById("sidebar").classList.remove("active");
+    setTimeout(() => {
+        document.querySelector(".hamburger").style.color = "white"; // Show the element
+    }, 100); // Delay in milliseconds (500ms = 0.5s)
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link href="prodavnica.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="top-bar">
+        <div style="margin-left: 40px;"> 
+            <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" class="instagram-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"  >
+                <!-- Outer square with rounded corners -->
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        
+                <!-- Inner circle (lens) - Adjusted position slightly downward -->
+                <circle cx="12" cy="13" r="4"></circle>
+        
+                <!-- Small dot (flash) -->
+                <circle cx="17.5" cy="6.5" r="0.8"></circle>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/YOUR_USERNAME" target="_blank" class="facebook-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Outer square with rounded corners -->
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                
+                <!-- Facebook 'f' -->
+                <path d="M14 7h-2c-1.1 0-2 .9-2 2v2H8v3h2v5h3v-5h2.5l.5-3H13V9.5c0-.3.2-.5.5-.5H15V7z"></path>
+            </svg>
+        </a>
+       
+                
+        </div>
+        
+        <p>Dekor Dom 021</p>
+        
+            <!-- <nav>
+            <label class="hamburger">☰</label>
+            <ul class="menu">
+              <li><a href="#">Početna</a></li>
+              <li><a href="#">O nama</a></li>
+            </ul>
+        </nav>  --> 
+       
+       
+        
+      
+       <!-- <button id="hamburger" class="hamburger">☰</button>--> 
+       
+       <a href="index.html" ><i class="fa fa-home"></i></a>
+
+    </div>
+    <div class="linija"></div>
+    <div class="filteri-bar">
+        <div class="prvi" onclick="f2();">PRIKAŽI SVE</div>
+        <div class="drugi" onclick = "f('stiropor')">STIROPOR</div>
+        <div class="treci" onclick="f('blokovi')">BLOKOVI</div>
+        <div class="cetvrti" onclick = "f('cigle')">CIGLE</div>
+    </div>
+      
+     <p class="naslov">Katalog artikala na prodaju</p>
+    <div class="artikli">
+        <!-- <div> <img src="../img/art1.png" > <p>stiropor 500din/m²</p> </div>
+        <div><img src="../img/art2.png" > <p>cigle 500din/m²</p></div>
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
+
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
+        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div> -->
+    </div>
+</body>
+<script>
+    const q = document.querySelector('.prvi');
+    const w = document.querySelector('.drugi');
+    const r = document.querySelector('.treci');
+    const s = document.querySelector('.cetvrti');
+    q.style.textDecoration = "underline";
+        q.style.textDecorationThickness = "3px"; // Change thickness
+        q.style.textUnderlineOffset = "3px"; // Adjust spacing
+        w.style.textDecoration = "none";
+        r.style.textDecoration = "none";
+        s.style.textDecoration = "none";
+    q.addEventListener('click', ()=> {
+        q.style.textDecoration = "underline";
+        q.style.textDecorationThickness = "3px"; // Change thickness
+        q.style.textUnderlineOffset = "3px"; // Adjust spacing
+        w.style.textDecoration = "none";
+        r.style.textDecoration = "none";
+        s.style.textDecoration = "none";
+    });
+    w.addEventListener('click', ()=> {
+        w.style.textDecoration = "underline";
+        w.style.textDecorationThickness = "3px"; // Change thickness
+        w.style.textUnderlineOffset = "3px"; // Adjust spacing
+        q.style.textDecoration = "none";
+        r.style.textDecoration = "none";
+        s.style.textDecoration = "none";
+    });
+    r.addEventListener('click', ()=> {
+        r.style.textDecoration = "underline";
+        r.style.textDecorationThickness = "3px"; // Change thickness
+        r.style.textUnderlineOffset = "3px"; // Adjust spacing
+        w.style.textDecoration = "none";
+        q.style.textDecoration = "none";
+        s.style.textDecoration = "none";
+    });
+    s.addEventListener('click', ()=> {
+        s.style.textDecoration = "underline";
+        s.style.textDecorationThickness = "3px"; // Change thickness
+        s.style.textUnderlineOffset = "3px"; // Adjust spacing
+        w.style.textDecoration = "none";
+        r.style.textDecoration = "none";
+        q.style.textDecoration = "none";
+    });
+
+   
+    let lista = document.querySelector('.artikli');
+    let proizvodi = [];
+    let proizvod = {
+        ime: "stiropor 12",
+        cena: 500,
+        slika: 'art1.png',
+        tip: "stiropor"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "stiropor 15",
+        cena: 500,
+        slika: 'art1.png',
+        tip: "stiropor"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "stiropor 20",
+        cena: 5000,
+        slika: 'art1.png',
+        tip: "stiropor"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "stiropor 25",
+        cena: 5100,
+        slika: 'art1.png',
+        tip: "stiropor"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "blok",
+        cena: 500,
+        slika: 'art2.png',
+        tip: "blokovi"
+    }
+
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "cigle 5506",
+        cena: 220,
+        slika: 'art3.jpg',
+        tip: "cigle"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "cigle 5512",
+        cena: 260,
+        slika: 'art3.jpg',
+        tip: "cigle"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "blok 12-5512",
+        cena: 260,
+        slika: 'art4.jpg',
+        tip: "blokovi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "blok 48-22",
+        cena: 260,
+        slika: 'art5.jpg',
+        tip: "blokovi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "blok 11",
+        cena: 260,
+        slika: 'art6.png',
+        tip: "blokovi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "cigle 55125464",
+        cena: 260,
+        slika: 'art7.jpg',
+        tip: "cigle"
+    }
+    
+    proizvodi.push(proizvod);
+    for(let i = 0; i < proizvodi.length;i++){
+        lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime} ${proizvodi[i].cena}din/m²</p></div>`;
+    }
+    let f = (tip)=> {
+      lista.innerHTML = ``;
+      for(let i = 0; i < proizvodi.length;i++){
+        if(proizvodi[i].tip === tip){
+        lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime} ${proizvodi[i].cena}din/m²</p></div>`;
+        }
+      }
+    }
+    let f2 = ()=> {
+        lista.innerHTML = ``;
+        for(let i = 0; i < proizvodi.length;i++){
+            lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime} ${proizvodi[i].cena}din/m²</p></div>`;
+        }
+    }
+</script>
+</html>

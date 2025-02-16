@@ -1,0 +1,313 @@
+.top-bar{
+    width: 100%;
+   /* background-color: #1E3A5F;*/
+   height: 120px;
+   position: fixed;
+    display: flex;
+    align-items: center; /* Aligns text vertically */
+    justify-content: space-between; /* Aligns text horizontally (optional) */
+    background-color: #002147;
+    z-index: 10000;
+    top: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color:  #F5F5DC;
+   padding-top: 120px;
+  }
+  .top-bar p{
+    
+     color: #D4AF37;
+     font-family: "Libre Bodoni", serif;
+     font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+    
+      
+      font-size: 50px;
+      
+  }
+  .menu { 
+    display: none;
+    animation: fadeIn 0.5s;
+  }
+body {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  
+}
+
+.hero-section {
+  background-color: #F5F5DC;/* #1a1a1a; /* Dark grey */
+  height: 90vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin-top: 0px;
+}
+
+.hero-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 ;
+  padding: 0 0px;
+  margin-top: 40px;
+}
+
+.image-content {
+  flex: 1;
+  position: relative;
+  clip-path: polygon(0 0, 100% 40%, 0 100%); /* Equilateral triangle */
+  clip-path: ellipse(100% 50% at 0% 50%);
+  overflow: hidden;
+  height: 70vh; /* Full height */
+  width: 100%;
+  background-image: url('facades-collage-screenshots\ \(1\).jpg'); /* Replace with your image path */
+  
+  /* Ensure the image covers the entire div */
+  background-size: cover;
+  
+  /* Fix the background image in place */
+  background-attachment: fixed;
+  
+  /* Center the background image */
+  background-position: -50px 0px;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  margin-top: 0px;
+}
+
+/*.image-content img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-position: left;
+}
+*/
+.text-content {
+  flex: 1;
+  margin-left: 160px;
+  z-index: 2;
+}
+
+.text-content h1 {
+  font-size: 3rem;
+ 
+  margin-bottom: 20px;
+  margin-top: 10px;
+  animation: fadeIn 1.5s;
+  font-size: 30px !important;
+  animation-delay: 3s;
+  color: transparent;
+  margin-top: 0;
+}
+.prikazi3{
+  color: #d4af37 !important; /* Golden */
+}
+.text-content p {
+  font-size: 1.2rem;
+ 
+  margin-bottom: 30px;
+  animation: fadeIn 1.5s ;
+  animation-delay: 3.5s;
+  color: transparent;
+}
+@keyframes fadeIn{
+  0% {opacity: 0; transform: translateX(-100px)}
+  
+  100% {opacity: 1; transform: translateX(0); }
+}
+.cta-button {
+  background-color: #003366; /* Dark blue */
+  color: #fff;
+  padding: 30px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: opacity 0.3s ease;
+}
+.naslov2{
+  color: transparent !important;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+}
+.cta-button:hover {
+  opacity: 0.8;
+}
+.prvi2 , .drugi2{
+  color: transparent;
+  animation-delay: 4.5s !important;
+  margin-bottom: 80px !important;
+}
+.dodaj{
+  color: #002147 !important; 
+}
+.naslov2{
+  animation-delay: 4s !important;
+  color: transparent;
+  font-size: 30px !important;
+}
+.dodaj1{
+  color: #d4af37 !important; 
+}
+.linija , .linija2{
+  height: 5px;
+  width: 90%;
+  background-color: #002147;
+  border-radius: 50%;
+ 
+  margin: 5px auto;
+}
+.linija2{
+  width: 80%;
+  margin: 5px auto;
+  /*transform: translate(50%, 50%);*/
+}
+
+.cover{
+  background-color:  #F5F5DC;
+  animation: reveal1 3s;
+  position: fixed;
+  left: 0;
+  height: 0;
+ 
+  bottom: 0;
+  width: 33%;
+  display: flex;
+    justify-content: center; /* Centers horizontally */
+  z-index: 1000;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;
+}
+
+
+
+.cover2{
+  background-color:  #F5F5DC;
+  animation: reveal2 3s;
+  position: fixed;
+  height: -400px;
+  
+ 
+  width: 34%;
+  display: flex;
+    justify-content: center; /* Centers horizontally */
+  z-index: 1000;
+
+
+  left: 50%; /* Move it to the center horizontally */
+    transform: translateX(-51.5%);
+    top: 0;
+    border-bottom-right-radius: 55%;
+    border-bottom-left-radius: 55%;
+     
+    
+}
+
+.cover3{
+  background-color:  #F5F5DC;
+  animation: reveal1 3s;
+  position: fixed;
+  /* Move it to the center vertically */
+    
+  height: 0;
+  right: 0;
+ bottom: 0;
+  
+  width: 33%;
+  display: flex;
+    justify-content: center; /* Centers horizontally */
+  z-index: 1000;
+  border-top-left-radius: 25%;
+  border-top-right-radius: 25%;  
+}
+/* styles.css */
+
+
+/* Create the roller using a pseudo-element */
+/*.body{
+  animati
+}*/
+@keyframes reveal1{
+0% {height: 100%;}
+
+100%{height: 0px;}
+}
+@keyframes reveal2{
+  0% {height: 100%;}
+  
+  100%{height: 0px;}
+  }
+  .valjak{
+    position: absolute; /* Relative positioning for the image */
+    overflow: hidden;
+    height: 600px;
+    width: 100%;
+    border-top-left-radius: 5%;
+  border-top-right-radius: 5%;  
+  z-index: 10005;
+  }
+  .dva{
+    bottom: 0;
+    transform: rotate(180deg); /* Initial position and rotation */
+  }
+
+  .rol{
+    margin-right: 50px;
+    font-size: 35px;
+    color: #D4AF37;
+  }
+  .usluge{
+    width: 100%;
+    height: 700px;
+    background-color: #002147;
+    clip-path: ellipse(100% 90% at 50% 100%);
+   padding-top: 150px;
+  }
+  .usluge h1{
+    text-align: center;
+    color: #D4AF37;
+    font-family: "Libre Bodoni", serif;
+    font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  
+  }
+  .lin{
+    height: 5px;
+    width: 350px;
+    margin: 0 auto;
+    background-color: #D4AF37;
+    border-radius: 75%;
+    margin-bottom: 30px;
+  }
+  .gg{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+  }
+  .gg img{
+    width: 400px;
+   height: 300px;
+ 
+   object-position: top;
+  }
+  .gg p{
+    color: #D4AF37;
+    font-size: 25px;
+  }
+ 
