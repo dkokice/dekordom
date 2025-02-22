@@ -1,5 +1,6 @@
 .top-bar{
     width: 100%;
+    
    /* background-color: #1E3A5F;*/
    height: 120px;
    position: fixed;
@@ -15,6 +16,9 @@ body {
     padding: 0;
     background-color:  #F5F5DC;
    padding-top: 120px;
+  }
+  .instagram-icon{
+    color: transparent;
   }
   .top-bar p{
     
@@ -51,6 +55,8 @@ body {
   overflow: hidden;
   position: relative;
   margin-top: 0px;
+  width: 100%;
+ 
 }
 
 .hero-content {
@@ -59,30 +65,28 @@ body {
   max-width: 1200px;
   margin: 0 ;
   padding: 0 0px;
-  margin-top: 40px;
+  margin-top: 20px; justify-content: space-between;
 }
 
 .image-content {
   flex: 1;
   position: relative;
-  clip-path: polygon(0 0, 100% 40%, 0 100%); /* Equilateral triangle */
-  clip-path: ellipse(100% 50% at 0% 50%);
+ /* clip-path: polygon(0 0, 100% 40%, 0 100%); /* Equilateral triangle */
+ /* clip-path: ellipse(100% 50% at 0% 50%);*/
+ border-top-right-radius: 90%;
+ border-bottom-right-radius: 90%;
   overflow: hidden;
   height: 70vh; /* Full height */
   width: 100%;
-  background-image: url('facades-collage-screenshots\ \(1\).jpg'); /* Replace with your image path */
-  
-  /* Ensure the image covers the entire div */
-  background-size: cover;
-  
-  /* Fix the background image in place */
-  background-attachment: fixed;
-  
-  /* Center the background image */
-  background-position: -50px 0px;
-  background-size: 90%;
+  background-image: url('Adobe\ Express\ -\ file.png'); /* Replace with your image path */
   background-repeat: no-repeat;
   margin-top: 0px;
+  width: 100%;
+  height: auto;
+    background-position: 50% 50%; /* Center horizontally and vertically */
+    background-size: cover;
+    background-attachment: fixed; /* Fix the background */
+    
 }
 
 /*.image-content img {
@@ -136,6 +140,7 @@ body {
   border-radius: 5px;
   font-size: 20px;
   transition: opacity 0.3s ease;
+  padding: 30px 10px;
 }
 .naslov2{
   color: transparent !important;
@@ -163,16 +168,20 @@ body {
 }
 .linija , .linija2{
   height: 5px;
-  width: 90%;
+  width: 90vw;
   background-color: #002147;
   border-radius: 50%;
- 
-  margin: 5px auto;
+  
+  margin: 10px auto;
+}
+.linija{
+  margin-top: 129px;
 }
 .linija2{
   width: 80%;
+  max-width: 80vw;
   margin: 5px auto;
-  /*transform: translate(50%, 50%);*/
+ 
 }
 
 .cover{
@@ -186,7 +195,7 @@ body {
   width: 33%;
   display: flex;
     justify-content: center; /* Centers horizontally */
-  z-index: 1000;
+  z-index: 100000;
   border-top-left-radius: 25%;
   border-top-right-radius: 25%;
 }
@@ -199,7 +208,7 @@ body {
   position: fixed;
   height: -400px;
   
- 
+  z-index: 100000;
   width: 34%;
   display: flex;
     justify-content: center; /* Centers horizontally */
@@ -220,7 +229,7 @@ body {
   animation: reveal1 3s;
   position: fixed;
   /* Move it to the center vertically */
-    
+  z-index: 100000;
   height: 0;
   right: 0;
  bottom: 0;
@@ -286,7 +295,15 @@ body {
   }
   .lin{
     height: 5px;
-    width: 350px;
+    width: 80vw;
+    margin: 0 auto;
+    background-color: #D4AF37;
+    border-radius: 75%;
+    margin-bottom: 10px;
+  }
+  .lin2{
+    height: 5px;
+    width: 35vw;
     margin: 0 auto;
     background-color: #D4AF37;
     border-radius: 75%;
@@ -298,16 +315,116 @@ body {
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    margin-top: 80px;
+    
+   
+   
   }
   .gg img{
-    width: 400px;
-   height: 300px;
+    width: 30vw;
+   height: 20vw;
  
    object-position: top;
   }
   .gg p{
     color: #D4AF37;
     font-size: 25px;
+   width: 30vw;
+  
   }
- 
+  .gg div{
+   
+    margin-bottom: 90px;
+  }
+  @media (max-width: 768px) {
+    .text-content {
+        margin-left: 20px; /* Reduce margin */
+    }
+}
+
+@media (max-width: 768px) {
+  .image-content {
+    clip-path: ellipse(100% 50% at 50% 50%); /* Center the ellipse */
+}
+  .top-bar p{
+    font-size: 20px;
+    
+  }
+  /*.top-bar a{
+    height:  50px !important;
+    width: 50px !important;
+  }*/
+  .igifb{
+    margin-left: 10px !important;
+  }
+  .rol{
+    margin-right: 10px;
+  }
+  .top-bar{
+    height: 90px;
+  }
+  .image-content{
+    display: none;
+  }
+  .cta-button{
+   font-size: 15px;
+  }
+  .cover{
+    width: 100%;
+    height: auto;
+  }
+  .cover2{
+    display: none;
+  }
+  .cover3{display: none;}
+  .gg{
+    flex-direction: column;
+    margin-top: 550px;
+   
+  }
+  .usluge{
+    padding-top: 0px;
+     height: 480vw !important;
+     clip-path: ellipse(170% 70% at 50% 80%);  /* Move the curve higher */
+     transform: translateY(-100px);
+  }
+  .lin{
+    margin-bottom: 0;
+  }
+  .gg img{
+    width: 85vw;
+    height: 50vw;
+  }
+  .usluge h1, .lin{
+    transform: translateY(80vw);
+  }
+  .lin2{
+    transform: translateY(82vw);
+    margin-bottom: 0;
+  }
+  .ime{
+    width: 80vw !important;
+  }
+  
+  .linija, .linija2{
+    height: 3px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+  }
+  .linija{
+    margin-top: 105px;
+  }
+}
+
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents side-scrolling */
+  padding: 0;
+}
+
+
+
+
+
+
+

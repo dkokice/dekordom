@@ -163,3 +163,56 @@ body {
     text-align: center;
     font-size: 30px;
   }
+ @media(max-width: 1200px) {
+   .info{
+    flex-direction: column;
+    height: 115vh;
+    border-radius: 0;
+   }
+   .map{
+    top: 100vh;
+    width: 50vh;
+    height: 50vh;
+    left: 50%;
+    transform: translateX(-50%);
+   }
+   .info p{
+    font-size: 20px;
+   
+   }
+  .kop {
+    margin-left: 0 !important;
+  }
+  .kop p{
+    text-align:center;
+    margin-left: 0 !important;
+  }
+  .o{
+    margin-left: 5vw !important;
+  }
+  .kp{
+    font-size: 5vw !important;
+  }
+  .informacija{
+    font-size: 4vw !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .crtica{
+    width: 35vw;
+    margin: 0 auto;
+    margin-bottom: 15px;
+  }
+  .top-bar p{
+    font-size: 5vw;
+  }
+  .top-bar{
+    height: 90px;
+  }
+  .fa-home{
+    margin-right: 10px;
+  }
+  .igifb{
+    margin-left: 5px !important;
+  }
+ }

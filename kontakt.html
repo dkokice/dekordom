@@ -12,8 +12,8 @@
 </head>
 <body>
     <div class="top-bar">
-        <div style="margin-left: 40px;"> 
-            <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" class="instagram-icon">
+        <div style="margin-left: 40px;" class = "igifb"> 
+            <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" class="instagram-icon" style="color: transparent;">
             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"  >
                 <!-- Outer square with rounded corners -->
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -71,15 +71,15 @@
   <!-- Gmail (Email) -->
   <!-- Instagram -->
   
-  <div style="margin-left: 100px;">
+  <div style="margin-left: 100px;" class="kop">
     <p class="kp">Kontakt podaci</p>
     <div class="crtica"></div>
-    <div> <i class="fa-solid fa-location-dot"></i> <p class="informacija">Branka Vukosavljevića 37</p>      <div class="obl"> <i class="fas fa-hand-point-right"> <p class="oblak">Proverite lokaciju na mapi</p>  </i>
+    <div> <i class="fa-solid fa-location-dot o"></i> <p class="informacija">Branka Vukosavljevića 37</p>      <div class="obl"> <i class="fas fa-hand-point-right"> <p class="oblak">Proverite lokaciju na mapi</p>  </i>
     </div>
      <!-- Location Pin --></div>
-<div><i class="fa-solid fa-phone"></i> <p class="informacija">062/811-38-21</p> <i class="fa-regular fa-copy brj"></i></div>
-<div><i class="fa-solid fa-envelope"></i><p class="informacija">stanislavnovisad@gmail.com</p><i class="fa-regular fa-copy mejl"></i></div> 
-<div><i class="fa-brands fa-instagram"></i><p class="informacija">dekordom021</p><i class="fa-regular fa-copy ig"></i></div>
+<div><i class="fa-solid fa-phone o"></i> <p class="informacija">062/811-38-21</p> <i class="fa-regular fa-copy brj"></i></div>
+<div><i class="fa-solid fa-envelope o"></i><p class="informacija">stanislavnovisad@gmail.com</p><i class="fa-regular fa-copy mejl"></i></div> 
+<div><i class="fa-brands fa-instagram o"></i><p class="informacija">dekordom021</p><i class="fa-regular fa-copy ig"></i></div>
    </div>
     <div class="map"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.1457739449766!2d19.774371189096822!3d45.24764699648064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b11e78388a287%3A0x3cf6f31f1c0ff1b1!2z0JHRgNCw0L3QutCwINCS0YPQutC-0YHQsNCy0ZnQtdCy0LjRm9CwIDM3LCDQktC10YLQtdGA0L3QuNC6!5e1!3m2!1ssr!2srs!4v1739315662810!5m2!1ssr!2srs" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe></div>
      
@@ -88,12 +88,38 @@
 
 let broj = document.querySelector('.brj');
 broj.addEventListener('click', () => {
-    navigator.clipboard.writeText("0628113821")
+   /* navigator.clipboard.writeText("0628113821")*/
+   const input = document.createElement('textarea'); // 1️⃣ Create a hidden textarea element
+input.value = '0628113821'; // 2️⃣ Set its value to the text you want to copy
+document.body.appendChild(input); // 3️⃣ Add it to the page (temporarily)
+input.select(); // 4️⃣ Select the text inside the textarea
+document.execCommand('copy'); // 5️⃣ Copy the selected text to the clipboard
+document.body.removeChild(input); // 6️⃣ Remove the textarea from the page
+
     
 });
 let mejl = document.querySelector('.mejl');
 mejl.addEventListener('click', () => {
-    navigator.clipboard.writeText("stanislavnovisad@gmail.com")
+    /*navigator.clipboard.writeText("stanislavnovisad@gmail.com")*/
+    const input = document.createElement('textarea'); // 1️⃣ Create a hidden textarea element
+input.value = 'stanislavnovisad@gmail.com'; // 2️⃣ Set its value to the text you want to copy
+document.body.appendChild(input); // 3️⃣ Add it to the page (temporarily)
+input.select(); // 4️⃣ Select the text inside the textarea
+document.execCommand('copy'); // 5️⃣ Copy the selected text to the clipboard
+document.body.removeChild(input); // 6️⃣ Remove the textarea from the page
+
+    
+});
+let ig = document.querySelector('.ig');
+ig.addEventListener('click', () => {
+    /*navigator.clipboard.writeText("stanislavnovisad@gmail.com")*/
+    const input = document.createElement('textarea'); // 1️⃣ Create a hidden textarea element
+input.value = 'dekordom021'; // 2️⃣ Set its value to the text you want to copy
+document.body.appendChild(input); // 3️⃣ Add it to the page (temporarily)
+input.select(); // 4️⃣ Select the text inside the textarea
+document.execCommand('copy'); // 5️⃣ Copy the selected text to the clipboard
+document.body.removeChild(input); // 6️⃣ Remove the textarea from the page
+
     
 });
 </script>

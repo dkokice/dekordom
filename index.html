@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -13,7 +15,7 @@
 </head>
 <body>
     <div class="top-bar">
-        <div style="margin-left: 40px;"> 
+        <div style="margin-left: 40px;" class="igifb"> 
             <a href="https://www.instagram.com/YOUR_USERNAME" target="_blank" class="instagram-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"  >
                 <!-- Outer square with rounded corners -->
@@ -40,19 +42,6 @@
         </div>
         
         <p>Dekor Dom 021</p>
-        
-            <!-- <nav>
-            <label class="hamburger">☰</label>
-            <ul class="menu">
-              <li><a href="#">Početna</a></li>
-              <li><a href="#">O nama</a></li>
-            </ul>
-        </nav>  --> 
-       
-       
-        
-      
-       <!-- <button id="hamburger" class="hamburger">☰</button>--> 
        
       <a href="prodavnica.html"> <i class="fas fa-shopping-cart rol"></i></a> 
 
@@ -79,7 +68,7 @@
           
             <h1 class="naslov2">Inovativni Pristupi, Savremeni Rezultati</h1>
             <p class="prvi2">U Dekor Dom 021, uvek smo korak ispred. Koristimo najnovije tehnologije i materijale kako bismo vam pružili rešenja koja nisu samo lepa, već i dugotrajna i ekološki održiva.</p>
-          <!-- <p class="drugi2">Naš tim redovno prati globalne trendove u dizajnu i građevinarstvu, što nam omogućava da vam ponudimo najsavremenije ideje za vaš prostor. </p> -->  
+         
             <a href="kontakt.html" class="cta-button">Kontaktirajte nas danas i zakažite besplatnu procenu!</a>  
         </div>
         </div>
@@ -102,16 +91,17 @@
     <div class="usluge">
         <h1>Usluge koje nudimo</h1>
          <div class="lin"></div>
+         <div class="lin2"></div>
          <div class="gg">
-            <div><img src="stiropor.jpg" >
-            <p class="ime">Demit fasada sa stiroporom</p>
+            <div ><img src="stiropor.jpg" >
+            <p class="ime">Demit fasada sa stiroporom</p> 
         </div>
             
         <div><img src="vuna.jpg" >
-            <p class="ime">Demit fasada sa kamenom vunom</p>
+             <p class="ime">Demit fasada sa kamenom vunom</p>
         </div>
         <div><img src="klinker.jpg" >
-            <p class="ime">Lepljenje klinkera</p>
+             <p class="ime">Lepljenje klinkera</p>
         </div>
 
          </div>
@@ -120,7 +110,7 @@
     <script>
        
 
-    // Animate roller moving down
+
     
         let prnsl = document.querySelector('.prvi-naslov');
         setTimeout(()=> {
@@ -130,7 +120,7 @@
         let dr = document.querySelector('.drugi');
         let nas = document.querySelector('.naslov2');
         let pr2 = document.querySelector('.prvi2');
-        let dr2 = document.querySelector('.drugi2');
+     
         setTimeout(()=> {
             pr.classList.add("dodaj");
             dr.classList.add("dodaj");
@@ -141,25 +131,13 @@
         }, 4100);
        setTimeout(()=> {
             pr2.classList.add("dodaj");
-            dr2.classList.add("dodaj");
+         
         }, 4550);
-        document.querySelector(".hamburger").addEventListener("click", function() {
-            document.querySelector(".menu").classList.toggle("show");
-        });
+       
       
         // Toggle visibility with CSS
-        document.styleSheets[0].insertRule(".menu.show { display: block; }", 0);
-        document.getElementById("hamburger").addEventListener("click", function() {
-    document.getElementById("sidebar").classList.toggle("active");
-    document.querySelector(".hamburger").style.color = "transparent";
-});
+       
 
-document.getElementById("closeBtn").addEventListener("click", function() {
-    document.getElementById("sidebar").classList.remove("active");
-    setTimeout(() => {
-        document.querySelector(".hamburger").style.color = "white"; // Show the element
-    }, 100); // Delay in milliseconds (500ms = 0.5s)
-});
 </script>
 </body>
 </html>
