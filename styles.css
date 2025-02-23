@@ -15,7 +15,7 @@ body {
     margin: 0;
     padding: 0;
     background-color:  #F5F5DC;
-   padding-top: 150px;
+   padding-top: 120px;
   }
   .instagram-icon{
     color: transparent;
@@ -65,7 +65,8 @@ body {
   max-width: 1200px;
   margin: 0 ;
   padding: 0 0px;
-  margin-top: 100px; justify-content: space-between;
+  margin-top: 20px; justify-content: space-between;
+  height: 100vh;
 }
 
 .image-content {
@@ -141,7 +142,6 @@ body {
   font-size: 20px;
   transition: opacity 0.3s ease;
   padding: 30px 10px;
-    z-index:9999999;
 }
 .naslov2{
   color: transparent !important;
@@ -284,7 +284,6 @@ body {
     background-color: #002147;
     clip-path: ellipse(100% 90% at 50% 100%);
    padding-top: 150px;
-      margin-top:200px;
   }
   .usluge h1{
     text-align: center;
@@ -423,6 +422,12 @@ html, body {
   overflow-x: hidden; /* Prevents side-scrolling */
   padding: 0;
 }
+
+
+
+
+
+
 
 
 
