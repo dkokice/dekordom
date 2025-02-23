@@ -352,7 +352,7 @@ padding-right: 5px;
     clip-path: ellipse(100% 50% at 50% 50%); /* Center the ellipse */
 }
   .top-bar p{
-    font-size: 20px;
+    font-size: 7vw;
     
   }
   /*.top-bar a{
@@ -363,23 +363,20 @@ padding-right: 5px;
     margin-left: 10px !important;
   }
   .rol{
-    margin-right: 10px;
-  }
+    margin-right: 10px;font-size: 4vh;  }
   .top-bar{
     height: 90px;
   }
   .image-content{
     display: none;
   }
-  .cta-button{
-   font-size: 15px;
-  }
+  
   .cover{
     width: 100%;
     height: auto;
   }
   .cta-button{
-    font-size: 8vw;
+    font-size: 6vw;
   }
   .cover2{
     display: none;
@@ -430,6 +427,14 @@ html, body {
   overflow-x: hidden; /* Prevents side-scrolling */
   padding: 0;
 }
+
+
+
+
+
+
+
+
 
 
 
