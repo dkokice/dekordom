@@ -282,7 +282,8 @@ body {
     height: 700px;
     background-color: #002147;
     clip-path: ellipse(100% 90% at 50% 100%);
-   padding-top: 350px;
+   padding-top: 150px;
+      margin-top:200px;
   }
   .usluge h1{
     text-align: center;
