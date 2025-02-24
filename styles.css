@@ -432,6 +432,39 @@ html, body {
   overflow-x: hidden; /* Prevents side-scrolling */
   padding: 0;
 }
+.card-list .card-item .card-link{
+  user-select: none;
+  display: block;
+  background: white;
+  padding: 18px;
+  border-radius:12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border: 2px solid transparent;
+  transition: 0.2s ease-in;
+}
+
+
+.card-list .card-item .card-link:hover{
+  border-color: white;
+}
+.card-list .card-item .card-image{
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover ;
+  border-radius: 10px;
+
+}
+.card-list .card-link{
+  margin: 16px 0 18px;
+  background-color: white;
+}
+.swiper-pagination{
+  position:relative;
+}
+
+
+
+
 
 
 
