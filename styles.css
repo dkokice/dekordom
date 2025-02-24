@@ -105,6 +105,11 @@ body {
   margin-left: 160px;
   z-index: 2;
   margin-top: 15vh;
+  
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  
+  
 }
 
 .text-content h1 {
@@ -427,6 +432,13 @@ html, body {
   overflow-x: hidden; /* Prevents side-scrolling */
   padding: 0;
 }
+
+
+
+
+
+
+
 
 
 
