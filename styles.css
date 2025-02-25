@@ -1,3 +1,4 @@
+
 .top-bar{
     width: 100%;
     
@@ -65,8 +66,8 @@ body {
   max-width: 1200px;
   margin: 0 ;
   padding: 0 0px;
-  margin-top: 20vh; justify-content: space-between;
-  height: 100vh;
+  margin-top: 10vh; justify-content: space-between;
+  height: 80vh;
 }
 
 .image-content {
@@ -325,10 +326,7 @@ padding-right: 5px;
     flex-direction: row;
     width: 100%;
     justify-content: space-around;
-    align-items: center;
     
-   
-   
   }
   .gg img{
     width: 30vw;
@@ -390,7 +388,7 @@ padding-right: 5px;
   .gg{
     flex-direction: column;
     margin-top: 550px;
-   
+   align-items: center;
   }
   .usluge{
     padding-top: 0px;
@@ -432,6 +430,7 @@ html, body {
   overflow-x: hidden; /* Prevents side-scrolling */
   padding: 0;
 }
+
 .card-list .card-item .card-link{
   user-select: none;
   display: block;
@@ -461,10 +460,6 @@ html, body {
 .swiper-pagination{
   position:relative;
 }
-
-
-
-
 
 
 
