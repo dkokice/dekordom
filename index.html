@@ -73,29 +73,84 @@
         <div class="card-wrapper">
           <ul class="card-list swiper-wrapper" style="padding :0px;">
             <li class="card-item swiper-slide">
-              <a href="#" class="card-link">
+              <button class="card-link" onclick="pokazi('IMG_20250225_000033.jpg', 'Spens CIty Gradnja');">
                 <img src="IMG_20250225_000033.jpg" class="card-image">
-              </a>
+              </button>
             </li>
             <li class="card-item swiper-slide">
-              <a href="#" class="card-link">
+              <button class="card-link" onclick="pokazi('IMG_20250225_000050.jpg', 'Spens CIty Gradnja');">
                 <img src="IMG_20250225_000050.jpg" class="card-image">
-              </a>
+              </button>
             </li>
             <li class="card-item swiper-slide">
-              <a href="#" class="card-link">
+              <button class="card-link" onclick="pokazi('IMG_20250225_000105.jpg', 'Spens CIty Gradnja');">
                 <img src="IMG_20250225_000105.jpg" class="card-image">
-              </a>
+              </button>
             </li>
             <li class="card-item swiper-slide">
-              <a href="#" class="card-link">
+              <button class="card-link" onclick="pokazi('IMG_20250225_000121.jpg', 'Spens CIty Gradnja');">
                 <img src="IMG_20250225_000121.jpg" class="card-image">
-              </a>
+              </button>
             </li>
             <li class="card-item swiper-slide">
-              <a href="#" class="card-link">
+              <button class="card-link" onclick="pokazi('IMG_20250225_000141.jpg', 'Spens CIty Gradnja');">
                 <img src="IMG_20250225_000141.jpg" class="card-image">
-              </a>
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140414.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140414.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140430.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140430.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140444.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140444.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140502.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140502.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140521.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140521.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140538.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140538.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140754.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140754.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140814.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140814.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140830.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140830.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140845.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140845.jpg" class="card-image">
+              </button>
+            </li>
+            <li class="card-item swiper-slide">
+              <button class="card-link" onclick="pokazi('IMG_20250227_140908.jpg', 'Spens CIty Gradnja');">
+                <img src="IMG_20250227_140908.jpg" class="card-image">
+              </button>
             </li>
           </ul>
     
@@ -122,11 +177,16 @@
 
          </div>
     </div>
+    <div class="popup">
+      
+    </div>
+    <div class="overlay"></div\>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
        
-
-
+    let popupElement = document.querySelector('.popup');
+ 
+ let blurElement = document.querySelector('.overlay');
     
         let prnsl = document.querySelector('.prvi-naslov');
         setTimeout(()=> {
@@ -180,7 +240,14 @@
   });
 
         // Toggle visibility with CSS
-       
+       let pokazi = (slika, ime) => {
+   popupElement.innerHTML = `<button class = "exit-btn" onclick = "popupElement.style.display = 'none';
+      blurElement.style.display = 'none';">X</button>
+      <img src="${slika}">
+      <p class="blurred-background">${ime}</p>`;
+      popupElement.style.display = 'block';
+              blurElement.style.display = 'block';
+       }
 
 </script>
 </body>
