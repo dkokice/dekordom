@@ -536,7 +536,7 @@ html, body {
 .blurred-background {
   position: absolute;
   background-color: transparent; /* Semi-transparent background to highlight the blur */
-  backdrop-filter: blur(5px); /* Apply blur effect to the background */
+  backdrop-filter: blur(10px); /* Apply blur effect to the background */
   padding: 20px;
   font-size: 20px;
   border-radius: 10px;
