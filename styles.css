@@ -112,7 +112,7 @@ body {
   
 }
 
-.text-content h1 {
+.text-content h1, .text-content h2 {
   font-size: 3rem;
  
   margin-bottom: 20px;
@@ -295,7 +295,7 @@ padding-right: 5px;
     clip-path: ellipse(100% 90% at 50% 100%);
    padding-top: 150px;
   }
-  .usluge h1{
+  .usluge h2{
     text-align: center;
     color: #D4AF37;
     font-family: "Libre Bodoni", serif;
@@ -304,6 +304,16 @@ padding-right: 5px;
   font-style: normal;
   
   }
+  .usluge h2 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
   .lin{
     height: 4px;
     width: 80vw;
@@ -415,11 +425,11 @@ padding-right: 5px;
     width: 78vw;
     height: 50vw;
   }
-  .usluge h1, .lin{
-    transform: translateY(80vw);
+  .usluge h2, .lin{
+    transform: translateY(50vh);
   }
   .lin2{
-    transform: translateY(82vw);
+    transform: translateY(52vh);
     margin-bottom: 10px;
   }
   .ime{
@@ -546,13 +556,3 @@ html, body {
  left: 50%;
  transform: translateX(-50%);
 }
-
-
-
-
-
-
-
-
-
-
