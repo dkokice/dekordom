@@ -16,6 +16,7 @@ padding: 0;
 /* background-color:  #F5F5DC;*/
 background-color: white;
 padding-top: 120px;
+padding-bottom: 40px;
 }
 .top-bar p{
 
@@ -77,8 +78,9 @@ padding: 20px 0px;
 
 }
 .artikli p{
-font-size: 25px;
+font-size: 1.5vw;
 margin-top: 40px;
+text-align: center;
 
 }
 .linija{
@@ -191,3 +193,4 @@ html, body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
   
 }
+
