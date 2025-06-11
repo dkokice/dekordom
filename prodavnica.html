@@ -49,25 +49,17 @@
     <div class="linija"></div>
     <div class="filteri-bar">
         <div class="prvi" onclick="f2();">PRIKAŽI SVE</div>
-        <div class="drugi" onclick = "f('stiropor')">STIROPOR</div>
-        <div class="treci" onclick="f('blokovi')">BLOKOVI</div>
-        <div class="cetvrti" onclick = "f('cigle')">CIGLE</div>
+        <div class="drugi" onclick = "f('završni materijali')">Završni materijali</div>
+        <div class="treci" onclick="f('Toplotni i izolacioni sistemi')">Toplotni i izolacioni sistemi</div>
+        <div class="cetvrti" onclick = "f('Saniranje i renoviranje')">Saniranje i renoviranje</div>
+        <div class="cetvrti" onclick = "f('Boje i premazi')">Boje i premazi</div>
+        <div class="cetvrti" onclick = "f('Postavljanje keramike')">Postavljanje keramike</div>
+        <div class="cetvrti" onclick = "f('Osnovni malteri')">Osnovni malteri</div>
     </div>
       
      <p class="naslov">Katalog artikala na prodaju</p>
     <div class="artikli">
-        <!-- <div> <img src="../img/art1.png" > <p>stiropor 500din/m²</p> </div>
-        <div><img src="../img/art2.png" > <p>cigle 500din/m²</p></div>
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
-
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div>
-        <div><img src="../img/art1.png" > <p>stiropor 500din/m²</p></div> -->
+        <!-- Artikli će biti dinamički dodati ovde -->
     </div>
 </body>
 <script>
@@ -117,91 +109,293 @@
    
     let lista = document.querySelector('.artikli');
     let proizvodi = [];
-   /* let proizvod = {
-        ime: "stiropor 12",
-        cena: 500,
-        slika: 'art1.png',
-        tip: "stiropor"
+    let proizvod = {
+        ime: "RÖFIX Aktivni predpremaz PREMIUM Aktivni predpremaz",
+        cena: 0,
+        slika: 'ROFIX Aktivni predpremaz PREMIUM.webp',
+        tip: "završni materijali"
     }
     proizvodi.push(proizvod);
      proizvod = {
-        ime: "stiropor 15",
-        cena: 500,
-        slika: 'art1.png',
-        tip: "stiropor"
+        ime: "RÖFIX SiSi-Putz® VITAL Silikonsko-silikatni završni malter",
+        cena: 0,
+        slika: 'ROFIX SiSi-Putz® VITAL.webp',
+        tip: "završni materijali"
     }
     proizvodi.push(proizvod);
 
     proizvod = {
-        ime: "stiropor 20",
-        cena: 5000,
-        slika: 'art1.png',
-        tip: "stiropor"
+        ime: "RÖFIX 700 Plemeniti beli malter",
+        cena: 0,
+        slika: 'ROFIX 700 Plemeniti beli malter.webp',
+        tip: "završni materijali"
     }
     proizvodi.push(proizvod);
      proizvod = {
-        ime: "stiropor 25",
-        cena: 5100,
-        slika: 'art1.png',
-        tip: "stiropor"
+        ime: "RÖFIX KHP Dekorativni završni malter na bazi silikona",
+        cena: 0,
+        slika: 'ROFIX KHP.webp',
+       tip: "završni materijali"
     }
     proizvodi.push(proizvod);
      proizvod = {
-        ime: "blok",
-        cena: 500,
-        slika: 'art2.png',
-        tip: "blokovi"
+        ime: "RÖFIX SHP PREMIUM Dekorativni završni malter na bazi silikona",
+        cena: 0,
+        slika: 'ROFIX SHP PREMIUM.webp',
+        tip: "završni materijali"
     }
 
     proizvodi.push(proizvod);
     proizvod = {
-        ime: "cigle 5506",
+        ime: "RÖFIX SP Silikatni strukturni završni malter Dekorativni završni malter na bazi silikona",
         cena: 220,
-        slika: 'art3.jpg',
-        tip: "cigle"
+        slika: 'ROFIX SP Silikatni strukturni završni malter.webp',
+      tip: "završni materijali"
     }
     
     proizvodi.push(proizvod);
     proizvod = {
-        ime: "cigle 5512",
-        cena: 260,
-        slika: 'art3.jpg',
-        tip: "cigle"
+        ime: "RÖFIX Predpremaz Vital Predpremaz",
+        cena: 0,
+        slika: 'ROFIX Predpremaz Vital.webp',
+        tip: "završni materijali"
     }
     
     proizvodi.push(proizvod);
     proizvod = {
-        ime: "blok 12-5512",
-        cena: 260,
-        slika: 'art4.jpg',
-        tip: "blokovi"
+        ime: "RÖFIX Predpremaz UNI Predpremaz i usporivač sušenja",
+        cena: 0,
+        slika: 'ROFIX Predpremaz UNI.webp',
+       tip: "završni materijali"
     }
     
     proizvodi.push(proizvod);
     proizvod = {
-        ime: "blok 48-22",
-        cena: 260,
-        slika: 'art5.jpg',
-        tip: "blokovi"
+        ime: "RÖFIX SA 922 X-DRY Ubrzivač sušenja pastoznih završnih maltera",
+        cena: 0,
+        slika: 'ROFIX SA 922 X-DRY.webp',
+        tip: "završni materijali"
+    
     }
     
     proizvodi.push(proizvod);
     proizvod = {
-        ime: "blok 11",
+        ime: "RÖFIX Gika-Grund Izolacioni predpremaz za gips-kartonske ploče",
         cena: 260,
-        slika: 'art6.png',
-        tip: "blokovi"
+        slika: 'ROFIX Gika-Grund.webp',
+       tip: "završni materijali"
     }
     
     proizvodi.push(proizvod);
     proizvod = {
-        ime: "cigle 55125464",
+        ime: "RÖFIX 715 Specijalni mineralni plemeniti malter",
         cena: 260,
-        slika: 'art7.jpg',
-        tip: "cigle"
+        slika: 'RÖFIX 715.webp',
+      tip: "završni materijali"
     }
     
-    proizvodi.push(proizvod);*/
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 325 FINO izravnavajuća masa i fini završni malter",
+        cena: 260,
+        slika: 'RÖFIX 325 FINO.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 713 NATURA Plemeniti mineralni strukturisani završni malter",
+        cena: 260,
+        slika: 'RÖFIX 713 NATURA.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 740 Plemeniti malter u boji",
+        cena: 260,
+        slika: 'RÖFIX 740.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 750 Krupnozrnasti završni malter",
+        cena: 260,
+        slika: 'RÖFIX 750.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 772 Šerani malter",
+        cena: 260,
+        slika: 'RÖFIX 772.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 773 Srednjeslojni kameni završni malter",
+        cena: 260,
+        slika: 'RÖFIX 773.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 793 SalePepe prani malter sa dodatnim efektima",
+        cena: 260,
+        slika: 'RÖFIX 793 SalePepe.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 300 Fini krečni unutrašnji malter",
+        cena: 260,
+        slika: 'RÖFIX 300.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX Silikon BASIS Dekorativni završni malter na bazi silikona",
+        cena: 260,
+        slika: 'RÖFIX Silikon BASIS.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX SiSi-Putz® KREATIV Silikonsko-silikatni završni malter",
+        cena: 260,
+        slika: 'RÖFIX SiSi-Putz® KREATIV.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SiSi-Putz® Futura Laki pastozni malter visoke izdašnosti",
+        cena: 260,
+        slika: 'RÖFIX SiSi-Putz® Futura.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Silikat BASIS Dekorativni završni malter na bazi silikona",
+        cena: 260,
+        slika: 'RÖFIX Silikat BASIS.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX KHP BASIS Završni malter na bazi veštačkih smola",
+        cena: 260,
+        slika: 'RÖFIX KHP BASIS.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Špricani malter za plafone Dekorativni završni malter na bazi silikona",
+        cena: 260,
+        slika: 'RÖFIX Špricani malter za plafone.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Malter za nanošenje valjkom ili četkom Strukturna boja",
+        cena: 260,
+        slika: 'RÖFIX Malter za nanošenje valjkom ili četkom.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX BSP Mozaični malter i dekorativni malter za sokl",
+        cena: 260,
+        slika: 'RÖFIX BSP.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Malta Fina unutrašnji krečni malter",
+        cena: 260,
+        slika: 'RÖFIX Malta Fina.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX mirror/lucid glass Završni premaz sa efektom sjaja",
+        cena: 260,
+        slika: 'RÖFIX mirror lucid glass.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX COLORGLOW Dodatak sa svetlucajućim efektom za RÖFIX PP 403 i RÖFIX mozaični malter, u boji",
+        cena: 260,
+        slika: 'RÖFIX COLORGLOW.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SILVERGLOW Dodatak sa svetlucajućim srebrnim efektom",
+        cena: 260,
+        slika: 'RÖFIX SILVERGLOW.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX PP 403 MULTI Univerzalni silikonski premaz",
+        cena: 260,
+        slika: 'RÖFIX PP 403 MULTI.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX PP 405 HYDROPHOB Silikonska zaštita",
+        cena: 260,
+        slika: 'RÖFIX PP 405 HYDROPHOB.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX S6 Zupčasti gleter šiljatog vrha",
+        cena: 260,
+        slika: 'RÖFIX S6.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Strugalica Alat za brušenje i struganje",
+        cena: 260,
+        slika: 'RÖFIX Strugalica.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX DESIGNPUTZ Specijalni završni malter na bazi NHL-a",
+        cena: 260,
+        slika: 'RÖFIX DESIGNPUTZ.webp',
+      tip: "završni materijali"
+    }
+    
+    proizvodi.push(proizvod);
+    
     for(let i = 0; i < proizvodi.length;i++){
         lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime} ${proizvodi[i].cena}din/m²</p></div>`;
     }
