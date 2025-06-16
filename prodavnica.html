@@ -50,11 +50,11 @@
     <div class="filteri-bar">
         <div class="prvi" onclick="f2();">PRIKAŽI SVE</div>
         <div class="drugi" onclick = "f('završni materijali')">Završni materijali</div>
-        <div class="treci" onclick="f('Toplotni i izolacioni sistemi')">Toplotni i izolacioni sistemi</div>
-        <div class="cetvrti" onclick = "f('Saniranje i renoviranje')">Saniranje i renoviranje</div>
-        <div class="cetvrti" onclick = "f('Boje i premazi')">Boje i premazi</div>
+        <div class="treci" onclick="f('Boje i premazi')">Boje i premazi</div>
         <div class="cetvrti" onclick = "f('Postavljanje keramike')">Postavljanje keramike</div>
-        <div class="cetvrti" onclick = "f('Osnovni malteri')">Osnovni malteri</div>
+        <div class="peti" onclick = "f('Toplotni i izolacioni sistemi')">Toplotni i izolacioni sistemi</div>
+        <div class="sesti" onclick = "f('Saniranje i renoviranje')">Saniranje i renoviranje</div>
+        <div class="sedmi" onclick = "f('Osnovni malteri')">Osnovni malteri</div>
     </div>
       
      <p class="naslov">Katalog artikala na prodaju</p>
@@ -67,12 +67,18 @@
     const w = document.querySelector('.drugi');
     const r = document.querySelector('.treci');
     const s = document.querySelector('.cetvrti');
+    const t = document.querySelector('.peti');
+      const u = document.querySelector('.sesti');
+      const v = document.querySelector('.sedmi');
     q.style.textDecoration = "underline";
         q.style.textDecorationThickness = "3px"; // Change thickness
         q.style.textUnderlineOffset = "3px"; // Adjust spacing
         w.style.textDecoration = "none";
         r.style.textDecoration = "none";
         s.style.textDecoration = "none";
+         t.style.textDecoration = "none";
+         u.style.textDecoration = "none";
+         v.style.textDecoration = "none";
     q.addEventListener('click', ()=> {
         q.style.textDecoration = "underline";
         q.style.textDecorationThickness = "3px"; // Change thickness
@@ -80,6 +86,10 @@
         w.style.textDecoration = "none";
         r.style.textDecoration = "none";
         s.style.textDecoration = "none";
+         t.style.textDecoration = "none";
+         u.style.textDecoration = "none";
+         v.style.textDecoration = "none";
+
     });
     w.addEventListener('click', ()=> {
         w.style.textDecoration = "underline";
@@ -88,6 +98,9 @@
         q.style.textDecoration = "none";
         r.style.textDecoration = "none";
         s.style.textDecoration = "none";
+         t.style.textDecoration = "none";
+         u.style.textDecoration = "none";
+         v.style.textDecoration = "none";
     });
     r.addEventListener('click', ()=> {
         r.style.textDecoration = "underline";
@@ -96,6 +109,9 @@
         w.style.textDecoration = "none";
         q.style.textDecoration = "none";
         s.style.textDecoration = "none";
+         t.style.textDecoration = "none";
+         u.style.textDecoration = "none";
+         v.style.textDecoration = "none";
     });
     s.addEventListener('click', ()=> {
         s.style.textDecoration = "underline";
@@ -104,9 +120,43 @@
         w.style.textDecoration = "none";
         r.style.textDecoration = "none";
         q.style.textDecoration = "none";
+         t.style.textDecoration = "none";
+         u.style.textDecoration = "none";
+         v.style.textDecoration = "none";
     });
-
-   
+      t.addEventListener('click', ()=> {
+         t.style.textDecoration = "underline";
+         t.style.textDecorationThickness = "3px"; // Change thickness
+         t.style.textUnderlineOffset = "3px"; // Adjust spacing
+         w.style.textDecoration = "none";
+         r.style.textDecoration = "none";
+         s.style.textDecoration = "none";
+            q.style.textDecoration = "none";
+            u.style.textDecoration = "none";
+            v.style.textDecoration = "none";
+      });
+      u.addEventListener('click', ()=> {
+         u.style.textDecoration = "underline";
+         u.style.textDecorationThickness = "3px"; // Change thickness
+         u.style.textUnderlineOffset = "3px"; // Adjust spacing
+         w.style.textDecoration = "none";
+         r.style.textDecoration = "none";
+         s.style.textDecoration = "none";
+            q.style.textDecoration = "none";
+            t.style.textDecoration = "none";
+            v.style.textDecoration = "none";
+      });
+      v.addEventListener('click', ()=> {
+         v.style.textDecoration = "underline";
+         v.style.textDecorationThickness = "3px"; // Change thickness
+         v.style.textUnderlineOffset = "3px"; // Adjust spacing
+         w.style.textDecoration = "none";
+         r.style.textDecoration = "none";
+         s.style.textDecoration = "none";
+            q.style.textDecoration = "none";
+            t.style.textDecoration = "none";
+            u.style.textDecoration = "none";
+      });
     let lista = document.querySelector('.artikli');
     let proizvodi = [];
     let proizvod = {
@@ -119,7 +169,7 @@
      proizvod = {
         ime: "RÖFIX SiSi-Putz® VITAL Silikonsko-silikatni završni malter",
         cena: 0,
-        slika: 'ROFIX SiSi-Putz® VITAL.webp',
+        slika: 'ROFIX SiSi-Putz VITAL.webp',
         tip: "završni materijali"
     }
     proizvodi.push(proizvod);
@@ -270,7 +320,7 @@
      proizvod = {
         ime: "RÖFIX SiSi-Putz® KREATIV Silikonsko-silikatni završni malter",
         cena: 260,
-        slika: 'RÖFIX SiSi-Putz® KREATIV.webp',
+        slika: 'RÖFIX SiSi-Putz KREATIV.webp',
       tip: "završni materijali"
     }
     
@@ -278,7 +328,7 @@
     proizvod = {
         ime: "RÖFIX SiSi-Putz® Futura Laki pastozni malter visoke izdašnosti",
         cena: 260,
-        slika: 'RÖFIX SiSi-Putz® Futura.webp',
+        slika: 'RÖFIX SiSi-Putz Futura.webp',
       tip: "završni materijali"
     }
     
@@ -396,8 +446,2129 @@
     
     proizvodi.push(proizvod);
     
+
+
+
+
+
+    /*Boje i premazi*/
+
+proizvod = {
+        ime: "RÖFIX PP 201 SILICA LF Silikatni dubinski predpremaz i razređivač",
+        cena: 260,
+        slika: 'RÖFIX PP 201 SILICA LF.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: " RÖFIX PP 301 HYDRO LFHidrosol dubinski predpremaz",
+        cena: 260,
+        slika: ' RÖFIX PP 301 HYDRO LF.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PP 307 ISO LF Izolacioni predpremaz",
+        cena: 260,
+        slika: 'RÖFIX PP 307 ISO LF.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PP 315 BETONGRUND Predpremaz za boje na betonskim površinama",
+        cena: 260,
+        slika: 'RÖFIX PP 315 BETONGRUND.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PP 401 SILCO LF Silikonski dubinski predpremaz",
+        cena: 260,
+        slika: 'RÖFIX PP 401 SILCO LF.webp',
+
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Gika-Grund Izolacioni predpremaz za gips-kartonske ploče",
+        cena: 260,
+        slika: 'RÖFIX Gika-Grund.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Grund Easy Akrilni predpremaz",
+        cena: 260,
+        slika: 'RÖFIX Grund Easy.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Grund Pro Mineralni predpremaz za unutrašnje podloge",
+        cena: 260,
+        slika: 'RÖFIX Grund Pro.webp',
+     tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PP 409 GraffitiStop Specijalni premaz",
+        cena: 260,
+        slika: 'RÖFIX PP 409 GraffitiStop.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PP 807 ISO CALCE Izolacioni premaz za pripremu krečnih podloga",
+        cena: 260,
+        slika: 'RÖFIX PP 807 ISO CALCE.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PI 223 MINERAL Mineralna unutrašnja boja",
+        cena: 260,
+        slika: 'RÖFIX PI 223 MINERAL.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PI 972 LATEX SG IZBRISATI Unutrašnja boja, svilenkasti sjaj",
+        cena: 260,
+        slika: 'RÖFIX PI 972 LATEX SG IZBRISATI.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PI 373 RAPID COLOR Disperziona unutrašnja boja, otporna na mokro brisanje",
+        cena: 260,
+        slika: 'RÖFIX PI 373 RAPID COLOR.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX COLOR PRO Disperziona unutrašnja boja, otporna na mokro brisanj",
+        cena: 260,
+        slika: 'RÖFIX COLOR PRO.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Color Easy Unutrašnja boja za zidove i plafone",
+        cena: 260,
+        slika: 'RÖFIX Color Easy.webp',
+    tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 416 ETICS® MICRO Boja za saniranje pukotina na TIS-u",
+        cena: 260,
+        slika: 'RÖFIX PE 416 ETICS MICRO.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 419 ETICS® Silikonska spoljašnja boja",
+        cena: 260,
+        slika: 'RÖFIX PE 419 ETICS.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 429 SILOSAN Silikonska fasadna boja",
+        cena: 260,
+        slika: 'RÖFIX PE 429 SILOSAN.webp',
+     tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 225 RENO 1K Silikatna unutrašnja i spoljašnja boja",
+        cena: 260,
+        slika: 'RÖFIX PE 225 RENO 1K.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 229 SOL SILIKAT Mineralna silikatna spoljašnja boja",
+        cena: 260,
+        slika: 'RÖFIX PE 229 SOL SILIKAT.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 312 OUT DOOR Boja za fasadu",
+        cena: 260,
+        slika: 'RÖFIX PE 312 OUT DOOR.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 319 OUT SIDE Boja za fasadu",
+        cena: 260,
+        slika: 'RÖFIX PE 319 OUT SIDE.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX CalceClima® Ekološka krečna boja",
+        cena: 260,
+        slika: 'RÖFIX CalceClima.webp',
+      tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 519 PREMIUM SISI Spoljašnja boja na bazi SiSi tehnologije",
+        cena: 260,
+        slika: 'RÖFIX PE 519 PREMIUM SISI.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PE 519 PREMIUM DARK SycoTec fasadna boja",
+        cena: 260,
+        slika: 'RÖFIX PE 519 PREMIUM DARK.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    
+
+proizvod = {
+        ime: "RÖFIX PE 516 SISI MICRO Boja za sanaciju pukotina",
+        cena: 260,
+        slika: 'RÖFIX PE 516 SISI MICRO.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Glet Pro Pastozna disperziona glet masa",
+        cena: 260,
+        slika: 'RÖFIX Glet Pro.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Finish Dekor Fina pastozna krečna glet masa",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Finish Dekor.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Finish Mineral Glet-masa za ručnu i mašinsku ugradnju",
+        cena: 260,
+        slika: 'RÖFIX Finish Mineral.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Finish Classic Unutrašnja glet masa",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Finish Classic.webp',
+       tip: "Boje i premazi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX PP 403 MULTI Univerzalni silikonski premaz",
+        cena: 260,
+        slika: 'RÖFIX PP 403 MULTI.webp',
+       tip: "Boje i premazi"
+    }
+    proizvodi.push(proizvod);
+
+    /*KERAMIKA*/
+
+
+proizvod = {
+        ime: "RÖFIX FUGA NANOTECH 730 Elastična cementna masa za fugovanje na bazi nanotehnologije",
+        cena: 260,
+        slika: 'RÖFIX FUGA NANOTECH 730.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+
+proizvod = {
+        ime: "RÖFIX AG 650 FLEX S1 Fleksibilni lepak za keramiku C2 TE S1",
+        cena: 260,
+        slika: 'RÖFIX AG 650 FLEX S1.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 663 FLEX ECO Lepak za keramiku C2 TE",
+        cena: 260,
+        slika: 'RÖFIX AG 663 FLEX ECO.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 685 SUPERFLEX S2 Fleksibilan lepak za keramiku C2 TE S2",
+        cena: 260,
+        slika: 'RÖFIX AG 685 SUPERFLEX S2.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AP 300 Koncentrat",
+        cena: 260,
+        slika: 'RÖFIX AP 300.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AP 320 Predpremaz za prionjivost",
+        cena: 260,
+        slika: 'RÖFIX AP 320.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AS 341 Optilastic® CM P",
+        cena: 260,
+        slika: 'RÖFIX AS 341.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AS 345 Optiseal® 1K CM 01 P",
+        cena: 260,
+        slika: 'RÖFIX AS 345.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AS 340 Tečna folija",
+        cena: 260,
+        slika: 'RÖFIX AS 340.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 659 Bianco STANDARD Lepak za keramiku C1 T",
+        cena: 260,
+        slika: 'RÖFIX AG 659 Bianco STANDARD.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 653 STANDARD Lepak za keramiku C1 T",
+        cena: 260,
+        slika: 'RÖFIX AG 653 STANDARD.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 654 INNEN Unutrašnji lepak za keramiku C1",
+        cena: 260,
+        slika: 'RÖFIX AG 654 INNEN.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 686 MOSAIK Malter za lepljenje i fugovanje C1 TE",
+        cena: 260,
+        slika: 'RÖFIX AG 686 MOSAIK.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 610 Bianco FLEX S1 Fleksibilni lepak za keramiku C2 TE S1",
+        cena: 260,
+        slika: 'RÖFIX AG 610 Bianco FLEX S1.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 660 DBM RAPID Brzovezujući lepak C2 F",
+        cena: 260,
+        slika: 'RÖFIX AG 660 DBM RAPID.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 664 Bianco FLEX ECO Lepak za keramiku C2 TE",
+        cena: 260,
+        slika: 'RÖFIX AG 664 Bianco FLEX ECO.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 687 StoneColl Fleksibilan lepak za veštački kamen",
+        cena: 260,
+        slika: 'RÖFIX AG 687 StoneColl.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 689 STONEFLEX Malter za lepljenje",
+        cena: 260,
+        slika: 'RÖFIX AG 689 STONEFLEX.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 656 MK RAPID Lepak za mermer C2 FT",
+        cena: 260,
+        slika: 'RÖFIX AG 656 MK RAPID.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AG 670 FLEX S1 MBM SPEZIAL Srednjeslojni lepak C2 TE S1",
+        cena: 260,
+        slika: 'RÖFIX AG 670 FLEX S1 MBM SPEZIAL.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AJ 315 EP Dvokomponentna masa na bazi epoksidne smole za lepljenje i fugovanje",
+        cena: 260,
+        slika: 'RÖFIX AJ 315 EP.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AJ 618 Lagana masa za fugovanje CG 1",
+        cena: 260,
+        slika: 'RÖFIX AJ 618.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AJ 690 Masa za fugovanje klinkera CG2 WA",
+        cena: 260,
+        slika: 'RÖFIX AJ 690.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    proizvod = {
+        ime: "RÖFIX AS 910 Traka za zaptivanje",
+        cena: 260,
+        slika: 'RÖFIX AS 910.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+
+ proizvod = {
+        ime: "RÖFIX AS 911 Butilna izolaciona traka",
+        cena: 260,
+        slika: 'RÖFIX AS 911.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX AS 915 Manžetna za zaptivanje - mala",
+        cena: 260,
+        slika: 'RÖFIX AS 915.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX AS 935 Manžetna za zaptivanje - velika",
+        cena: 260,
+        slika: 'RÖFIX AS 935.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX AS 950 Ugaonik za zaptivanje - za unutrašnje uglove",
+        cena: 260,
+        slika: 'RÖFIX AS 950.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX AS 955 Ugaonik za zaptivanje - za spoljašnje uglove",
+        cena: 260,
+        slika: 'RÖFIX AS 955.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX AB 950 Filc za odvajanje",
+        cena: 260,
+        slika: 'RÖFIX AB 950.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX P50 Staklena mrežica za armiranje",
+        cena: 260,
+        slika: 'RÖFIX P50.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "SILIKON NANOTECH 720 Silikonski zaptivač",
+        cena: 260,
+        slika: 'SILIKON NANOTECH 720.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+   proizvod = {
+        ime: "RÖFIX AJ-Z 920 Elastična akrilna masa za fugovanje",
+        cena: 260,
+        slika: 'RÖFIX AJ-Z 920.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+     proizvod = {
+        ime: "RÖFIX AJ 360 Akrilna masa za zaptivanje - silikon",
+        cena: 260,
+        slika: 'RÖFIX AJ 360.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+     proizvod = {
+        ime: "RÖFIX AJ 450 Sanitarni silikon Neutral",
+        cena: 260,
+        slika: 'RÖFIX AJ 450.webp',
+       tip: "Postavljanje keramike"
+    }
+    proizvodi.push(proizvod);
+
+    
+
+
+ /*osnovni malteri*/
+
+
+
+ proizvod = {
+        ime: "RÖFIX Betonkontakt Vezivni most za beton",
+        cena: 260,
+        slika: 'RÖFIX Betonkontakt.webp',
+      tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 180 Primo unutrašnji osnovni malter",
+        cena: 260,
+        slika: 'RÖFIX 180.webp',
+      tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 510 Krečno-cementni osnovni malter",
+        cena: 260,
+        slika: 'RÖFIX 510.webp',
+     tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 150 Gipsano-krečni unutrašnji malter",
+        cena: 260,
+        slika: 'RÖFIX 150.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 866 Krečno-cementni lagani osnovni malter",
+        cena: 260,
+        slika: 'RÖFIX 866.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX Premaz za neutralizovanje Vezivni most",
+        cena: 260,
+        slika: 'RÖFIX Premaz za neutralizovanje.webp',
+      tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 670 Cementni špric",
+        cena: 260,
+        slika: 'RÖFIX 670.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 670 S Cementni špric Spezial",
+        cena: 260,
+        slika: 'RÖFIX 670 S.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 672 Cementni špric/vezivni most",
+        cena: 260,
+        slika: 'RÖFIX 672.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 660 Cementno-krečni grubi osnovni malter",
+        cena: 260,
+        slika: 'RÖFIX 660.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX ZK-ECO Krečno-cementni osnovni malter",
+        cena: 260,
+        slika: 'RÖFIX ZK-ECO.webp',
+      tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 525 Malter za sokl",
+        cena: 260,
+        slika: 'RÖFIX 525.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 620Cementni osnovni malter, malter za sokl",
+        cena: 260,
+        slika: 'RÖFIX 620.webp',
+      tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 190 Krečno-gipsani unutrašnji malter",
+        cena: 260,
+        slika: 'RÖFIX 190.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 170 Univerzalni unutrašnji osnovni malter",
+        cena: 260,
+        slika: 'RÖFIX 170.webp',
+      tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 185 Lagani unutrašnji malter za izravnavanje",
+        cena: 260,
+        slika: 'RÖFIX 185.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX 888 Toplotno-izolacioni malter",
+        cena: 260,
+        slika: 'RÖFIX 888.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 840 Toplotno-izolacioni malter",
+        cena: 260,
+        slika: 'RÖFIX 840.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 850 Toplotno-izolacioni malter",
+        cena: 260,
+        slika: 'RÖFIX 850.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Rentgenski malter Rentgenski malter",
+        cena: 260,
+        slika: 'RÖFIX Rentgenski malter.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 57 Cementni građevinski lepak beli",
+        cena: 260,
+        slika: 'RÖFIX 57.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX PVC Lajsna za malter P PVC",
+        cena: 260,
+        slika: 'RÖFIX PVC Lajsna za malter P.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Widra žičani ugaoni profil APE (nerđajući čelik)",
+        cena: 260,
+        slika: 'RÖFIX Widra žičani ugaoni profil.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Ugaoni profil 1007 Profil",
+        cena: 260,
+        slika: 'RÖFIX Ugaoni profil 1007.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Brzoučvrsna lajsna 1106 Profil",
+        cena: 260,
+        slika: 'RÖFIX Brzoučvrsna lajsna 1106.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX P100 Gruba staklena mrežica za armiranje",
+        cena: 260,
+        slika: 'RÖFIX P100.webp',
+       tip: "Osnovni malteri"
+    }
+    
+    proizvodi.push(proizvod);
+
+
+
+
+/*saniranje i renoviranje*/
+proizvod = {
+        ime: "RÖFIX Renoplus® Univerzalni malter za renoviranje i izravnavanje",
+        cena: 260,
+        slika: 'RÖFIX Renoplus.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Renostar® Univerzalna masa za renoviranje i izravnavanje",
+        cena: 260,
+        slika: 'RÖFIX Renostar.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Fino Krečni fini malter",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Fino.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX NHL2 Prirodni hidraulični kreč prema EN 459-1",
+        cena: 260,
+        slika: 'RÖFIX NHL2.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX NHL5 Prirodni hidraulični kreč prema EN 459-1",
+        cena: 260,
+        slika: 'RÖFIX NHL5.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX PP 201 SILICA LFSilikatni dubinski predpremaz i razređivač",
+        cena: 260,
+        slika: 'RÖFIX PP 201 SILICA LF.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Aerogel sistem toplotno-izolacionih maltera Visoko izolacioni sistem maltera na mineralnoj bazi",
+        cena: 260,
+        slika: 'RÖFIX Aerogel sistem toplotno-izolacionih maltera.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Hidraulično-krečni malter za injektiranje Malter za injektiranje",
+        cena: 260,
+        slika: '  RÖFIX Hidraulično-krečni malter za injektiranje.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 671 Sanir špric",
+        cena: 260,
+        slika: 'RÖFIX 671.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 675 Hidraulično-krečni špric",
+        cena: 260,
+        slika: 'RÖFIX 675.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Algenkiller Specijalni predpremaz",
+        cena: 260,
+        slika: 'RÖFIX Algenkiller.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Antisalz sredstvo za zaštitu od prodiranja soli Specijalni predpremaz",
+        cena: 260,
+        slika: 'RÖFIX Antisalz sredstvo za zaštitu od prodiranja soli.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Sanir grund Specijalni predpremaz",
+        cena: 260,
+        slika: 'RÖFIX Sanir grund.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Glineni rastvor Specijalni predpremaz",
+        cena: 260,
+        slika: 'RÖFIX Glineni rastvor.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Cavastop Sredstvo za zaustavljanje kapilarne vlage",
+        cena: 260,
+        slika: 'RÖFIX Cavastop.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 635 Hidroizolacioni malter",
+        cena: 260,
+        slika: 'RÖFIX 635.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX PE 225 RENO 1K Silikatna unutrašnja i spoljašnja boja",
+        cena: 260,
+        slika: 'RÖFIX PE 225 RENO 1K.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 636 Hidroizolaciona masa",
+        cena: 260,
+        slika: 'RÖFIX 636.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX PE 229 SOL SILIKAT Mineralna silikatna spoljašnja boja",
+        cena: 260,
+        slika: 'RÖFIX PE 229 SOL SILIKAT.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX CalceClima® Ekološka krečna boja",
+        cena: 260,
+        slika: 'RÖFIX CalceClima.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SanoCalce Fondo Krečni špric na bazi NHL5",
+        cena: 260,
+        slika: 'RÖFIX SanoCalce Fondo.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX SanoCalce Intonaco Malter za saniranje na osnovi NHL5",
+        cena: 260,
+        slika: 'RÖFIX SanoCalce Intonaco.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Finish Dekor Fina pastozna krečna glet masa",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Finish Dekor.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX SanoCalce Finitura Sanacioni završni malter na bazi NHL-a",
+        cena: 260,
+        slika: '  RÖFIX SanoCalce Finitura.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 340 Završni malter za saniranje",
+        cena: 260,
+        slika: 'RÖFIX 340.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 341 Završni beli malter za saniranje",
+        cena: 260,
+        slika: 'RÖFIX 341.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 640 Malter za saniranje R-W",
+        cena: 260,
+        slika: '  RÖFIX 640.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 648 Osnovni malter sa porama",
+        cena: 260,
+        slika: 'RÖFIX 648.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 650 Beli malter za saniranje",
+        cena: 260,
+        slika: 'RÖFIX 650.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Renopor® Predpremaz i usporivač sušenja",
+        cena: 260,
+        slika: 'RÖFIX Renopor.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Renopor® Spezial lepljenje i armiranje",
+        cena: 260,
+        slika: 'RÖFIX Renopor Spezial.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Renopor® I Izolaciona ploča za unutrašnju upotrebu 060",
+        cena: 260,
+        slika: 'RÖFIX Renopor I.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Finish Classic Unutrašnja glet masa",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Finish Classic.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 665 Malter za popunjavanje",
+        cena: 260,
+        slika: 'RÖFIX 665.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 952 Malter u boji na osnovi hidrauličnog kreča",
+        cena: 260,
+        slika: 'RÖFIX 952.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 993 Hidraulično-krečni malter za fugne",
+        cena: 260,
+        slika: 'RÖFIX 993.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Belit Malter za odlivke Malter za modelovanje istorijskih zidanih konstrukcija",
+        cena: 260,
+        slika: 'RÖFIX Belit Malter za odlivke.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Belit Fini malter Malter za modelovanje istorijskih zidanih konstrukcija",
+        cena: 260,
+        slika: 'RÖFIX Belit Fini malter.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Belit Malter za odlivke Solido 12",
+        cena: 260,
+        slika: 'RÖFIX Belit Malter za odlivke.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Belit Malter za odlivke Solido 15",
+        cena: 260,
+        slika: 'RÖFIX Belit Malter za odlivke.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX PRONTO Univerzalni brzovezujući malter od prirodnog hidrauličnog kreča i rimskog cementa",
+        cena: 260,
+        slika: 'RÖFIX PRONTO.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX CalceClima® Hidraulično-krečni malter za saniranje",
+        cena: 260,
+        slika: 'RÖFIX CalceClima.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Hidraulično-krečni malter za sokl Hidraulično-krečni malter",
+        cena: 260,
+        slika: 'RÖFIX Hidraulično-krečni malter za sokl.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 695 Hidraulično-krečni malter za renoviranje",
+        cena: 260,
+        slika: 'RÖFIX 695.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 696 Hidraulično-krečni mašinski malter",
+        cena: 260,
+        slika: '  RÖFIX 696.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 697 Baukasten Krečna mešavina za maltere za renoviranje",
+        cena: 260,
+        slika: 'RÖFIX 697 Baukasten.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Gašeni kreč Historijski malteri",
+        cena: 260,
+        slika: 'RÖFIX Gašeni kreč.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX SEMIBELIT Substitutivno vezivo za rimski cement",
+        cena: 260,
+        slika: 'RÖFIX SEMIBELIT.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Trass Historijski malteri",
+        cena: 260,
+        slika: 'RÖFIX Trass.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Renofino® Univerzalni fini malter za renoviranje",
+        cena: 260,
+        slika: 'RÖFIX Renofino.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Renofinish® Univerzalna masa za renoviranje i gletovanje",
+        cena: 260,
+        slika: 'RÖFIX Renofinish.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX 350 Krečna glet masa",
+        cena: 260,
+        slika: 'RÖFIX 350.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 380 Fini mineralni malter na bazi hidrauličnog kreča",
+        cena: 260,
+        slika: 'RÖFIX 380.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX Glet Easy Unutrašnja glet masa",
+        cena: 260,
+        slika: 'RÖFIX Glet Easy.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 530 Krečni malter",
+        cena: 260,
+        slika: 'RÖFIX 530.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    
+    proizvod = {
+        ime: "RÖFIX CalceClima® Krečni špric",
+        cena: 260,
+        slika: 'RÖFIX CalceClima.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Ambiente Krečni unutrašnji malter",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Ambiente.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Canapa Finitura Fini krečni malter obogaćen vlaknima konoplje",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Canapa Finitura.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Canapa Intonaco Krečni unutrašnji malter sa vlaknima konoplje",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Canapa Intonaco.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CalceClima® Thermo Krečni toplotno-izolacioni malter",
+        cena: 260,
+        slika: 'RÖFIX CalceClima Thermo.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Krečna boja Premazi za renoviranje",
+        cena: 260,
+        slika: 'RÖFIX Krečna boja.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Sesco Ekološka boja na bazi kreča",
+        cena: 260,
+        slika: 'RÖFIX Sesco.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX Sumpfkalk Malerkalk Premazi za renoviranje",
+        cena: 260,
+        slika: 'RÖFIX Sumpfkalk Malerkalk.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX Traka Traka za popravku",
+        cena: 260,
+        slika: 'RÖFIX Traka.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX SismaDur Iniezione 15 Malter za injektiranje na osnovi NHLa",
+        cena: 260,
+        slika: '  RÖFIX SismaDur Iniezione 15.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "RÖFIX Belit Iniezione 8 Hidraulično-krečni malter za injektiranje na osnovi NHL5",
+        cena: 260,
+        slika: 'RÖFIX Belit Iniezione 8.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+     proizvod = {
+        ime: "Fixit 222 Aerogel visoko efikasan izolacioni malter",
+        cena: 260,
+        slika: 'Fixit 222.webp',
+       tip: "Saniranje i renoviranje"
+    }
+    
+    proizvodi.push(proizvod);
+
+
+
+
+    /*toplotni i  izaolacioni sistemi*/
+
+
+ proizvod = {
+        ime: "RÖFIX Unistar® LIGHT Malter za lepljenje i armiranje",
+        cena: 260,
+        slika: 'RÖFIX Unistar LIGHT.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Polystar® Malter za lepljenje i armiranje beli",
+        cena: 260,
+        slika: 'RÖFIX Polystar.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX EPS-F 031 RELAX Fasadna izolaciona ploča, siva, sa prorezima",
+        cena: 260,
+        slika: 'RÖFIX EPS-F 031 RELAX.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Poly LIGHT Malter za lepljenje i armiranje",
+        cena: 260,
+        slika: 'RÖFIX Poly LIGHT.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX IA 622 Malter za lepljenje i armiranje",
+        cena: 260,
+        slika: 'RÖFIX IA 622.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SPEED 040 (OB) Izolacione lamele od mineralne vune",
+        cena: 260,
+        slika: 'RÖFIX SPEED 040 (OB).webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX IA 622 EPS- Toplotno-izolacioni sistem",
+        cena: 260,
+        slika: 'RÖFIX IA 622.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX LIGHT EPS- Toplotno-izolacioni sistem",
+        cena: 260,
+        slika: 'RÖFIX LIGHT.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX POLY EPS- Toplotno-izolacioni sistem",
+        cena: 260,
+        slika: 'RÖFIX POLY.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX W50 EPS- Toplotno-izolacioni sistem",
+        cena: 260,
+        slika: 'RÖFIX W50.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX RenEtics® Sistem za sanaciju TISa Toplotno-izolacioni sistem",
+        cena: 260,
+        slika: 'RÖFIX RenEtics Sistem za sanaciju TISa.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+
+proizvod = {
+        ime: "RÖFIX StoneEtics® 50 sa klinkerom",
+        cena: 260,
+        slika: 'RÖFIX StoneEtics 50.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX StoneEtics® 50 sa mozaikom Toplotno-izolacioni sistem",
+        cena: 260,
+        slika: 'RÖFIX StoneEtics 50 sa mozaikom.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX StoneEtics® 50 sa keramikom Toplotno-izolacioni sistem",
+        cena: 260,
+        slika: 'RÖFIX StoneEtics 50 sa keramikom.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX StoneEtics® 103 sa veštačkim kamenom (od laganog betona)",
+        cena: 260,
+        slika: 'RÖFIX StoneEtics 103 sa veštačkim kamenom.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX StoneEtics® 103 sa prirodnim kamenom Toplotno-izolacioni sistem",
+        cena: 260,
+        slika: 'RÖFIX StoneEtics 103 sa prirodnim kamenom.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX FIRESTOP (BASIC) Toplotno-izolacioni sistem od mineralne vune",
+        cena: 260,
+        slika: 'RÖFIX FIRESTOP (BASIC).webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX FIRESTOP (LIGHT) Toplotno-izolacioni sistem od mineralne vune",
+        cena: 260,
+        slika: 'RÖFIX FIRESTOP (LIGHT).webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SPEED (LIGHT) Toplotno-izolacioni sistem od lamela mineralne vune",
+        cena: 260,
+        slika: 'RÖFIX SPEED (LIGHT).webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CORKTHERM 040 Toplotno-izolacioni sistem od pluta",
+        cena: 260,
+        slika: 'RÖFIX CORKTHERM 040.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Unistar® POR Malter za lepljenje i armiranje",
+        cena: 260,
+        slika: 'RÖFIX Unistar POR.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Unistar® BASIC Malter za lepljenje i armiranje",
+        cena: 260,
+        slika: 'RÖFIX Unistar BASIC.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Collstar Malter za lepljenje",
+        cena: 260,
+        slika: 'RÖFIX Collstar.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX UniContact Malter za lepljenje",
+        cena: 260,
+        slika: 'RÖFIX UniContact.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX RenEtics® Lagani temeljni malter na osnovi NHL-a i specijalnog cementa",
+        cena: 260,
+        slika: 'RÖFIX RenEtics Lagani temelj.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX ELASTIC Masa za armiranje bez cementa",
+        cena: 260,
+        slika: 'RÖFIX ELASTIC.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX UNICOLL Univerzalni lepak",
+        cena: 260,
+        slika: 'RÖFIX UNICOLL.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Polymer Višenamenska masa za zaptivanje i lepljenje",
+        cena: 260,
+        slika: 'RÖFIX Polymer.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX IF 300 PURCOLL 1K- pištoljska pena za popunjavanje",
+        cena: 260,
+        slika: 'RÖFIX IF 300 PURCOLL.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX IF 301 1K- pištoljska pena za popunjavanje B1",
+        cena: 260,
+        slika: 'RÖFIX IF 301.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Optiflex® 1K LIGHT Izolaciona masa za izravnavanje",
+        cena: 260,
+        slika: 'RÖFIX Optiflex 1K LIGHT.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX EPS-F 031 Fasadna izolaciona ploča, siva",
+        cena: 260,
+        slika: 'RÖFIX EPS-F 031.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX EPS-F 040 Fasadna izolaciona ploča, bela",
+        cena: 260,
+        slika: 'RÖFIX EPS-F 040.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX EPS-P 035 Izolaciona ploča za sokl",
+        cena: 260,
+        slika: 'RÖFIX EPS-P 035.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX FIRESTOP 036 OB Izolaciona ploča od mineralne vune",
+        cena: 260,
+        slika: 'RÖFIX FIRESTOP 036 OB.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX MINOPOR® 045 Mineralna izolaciona ploča",
+        cena: 260,
+        slika: 'RÖFIX MINOPOR 045.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX CORKTHERM 040 Izolacione ploče od plute (ICB)",
+        cena: 260,
+        slika: 'RÖFIX CORKTHERM 040.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX ROCKET Teleskopski uronjivi tipl",
+        cena: 260,
+        slika: 'RÖFIX ROCKET.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX ROCKET Izolaciona rondela Pokrivna rondela",
+        cena: 260,
+        slika: 'RÖFIX ROCKET Izolaciona rondela.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX MW CUP Tanjirić za uronjivu montažu RÖFIX ROCKET tiplova",
+        cena: 260,
+        slika: 'RÖFIX MW CUP.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX STR-8Z 2G Utapajući tipl sa navojem",
+        cena: 260,
+        slika: 'RÖFIX STR-8Z 2G.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX STR Izolaciona rondela Izolaciona rondela",
+        cena: 260,
+        slika: 'RÖFIX STR.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX STR Završni izolacioni element za STR-8Z 2G",
+        cena: 260,
+        slika: 'RÖFIX STR Završni izolacioni element.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX EVO Fasadni tipl sa navojem za dodatno učvršćivanje PU-penom",
+        cena: 260,
+        slika: 'RÖFIX EVO.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX H3 Univerzalni tipl",
+        cena: 260,
+        slika: 'RÖFIX H3.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX H1 eco Plastični tipl/čelični ekser",
+        cena: 260,
+        slika: 'RÖFIX H1 eco.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX DTL-90 Dodatni tanjirić tipla",
+        cena: 260,
+        slika: 'RÖFIX DTL-90.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX DTL-140 plus Dodatni tanjirić tipla",
+        cena: 260,
+        slika: 'RÖFIX DTL-140 plus.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX STR-H Tipl za izolacione ploče (drvo/lim)",
+        cena: 260,
+        slika: 'RÖFIX STR-H.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX P50 Staklena mrežica za armiranje",
+        cena: 260,
+        slika: 'RÖFIX P50.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX P10 Pancir mrežica",
+        cena: 260,
+        slika: 'RÖFIX P10.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Strugalica Alat za brušenje i struganje",
+        cena: 260,
+        slika: 'RÖFIX Strugalica.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Quick-Quader EPS Montažni kvadar, 120x160x1000 mm",
+        cena: 260,
+        slika: 'RÖFIX Quick-Quader EPS.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Različiti montažni elementi TIS alati",
+        cena: 260,
+        slika: 'RÖFIX Različiti montažni elementi.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Spiralni tipl Montažni tipli",
+        cena: 260,
+        slika: 'RÖFIX Spiralni tipl.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Ugaoni profil ",
+        cena: 260,
+        slika: 'RÖFIX Ugaoni profil.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Ugaoni profil sa mrežicom u rolni Profil",
+        cena: 260,
+        slika: 'RÖFIX Ugaoni profil sa mrežicom u rolni.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Okapni profil sa mrežicom Okapni profil sa mrežicom",
+        cena: 260,
+        slika: 'RÖFIX Okapni profil sa mrežicom.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX APL 3D Membran Reno Priključni profil sa mrežicom",
+        cena: 260,
+        slika: 'RÖFIX APL 3D Membran Reno.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX APL MINI 3D Membran Priključni profil sa mrežicom",
+        cena: 260,
+        slika: 'RÖFIX APL MINI 3D Membran.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX APL 3D PROFI PLUS Priključni profil sa mrežicom",
+        cena: 260,
+        slika: 'RÖFIX APL 3D PROFI PLUS.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX APL 3D Membran Rolladen priključni profil za spoj vodilice za roletne",
+        cena: 260,
+        slika: 'RÖFIX APL 3D Membran Rolladen.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX APL 3D STANDARD Priključni profil sa mrežicom",
+        cena: 260,
+        slika: 'RÖFIX APL 3D STANDARD.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX BAP 45 Završni profil za limene opšivke",
+        cena: 260,
+        slika: 'RÖFIX BAP 45.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Završni profil krova profil krovnog vazdušnog ispusta",
+        cena: 260,
+        slika: 'RÖFIX Završni profil krova.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Zaključni profil U-forme za nosive ploče",
+        cena: 260,
+        slika: 'RÖFIX Zaključni profil.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX 3D Priključni profil za prozore - 3D lajsna za malterisanje sa mrežicom za drvene i aluminijumske prozore",
+        cena: 260,
+        slika: 'RÖFIX 3D Priključni profil za prozore.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Dilatacioni profil E i V forme",
+        cena: 260,
+        slika: 'RÖFIX Dilatacioni profil.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Izolaciona traka za fugne Traka za zaptivanje",
+        cena: 260,
+        slika: 'RÖFIX Izolaciona traka za fugne.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Bazni i priključni profil za sokl-teleskopski Profil",
+        cena: 260,
+        slika: 'RÖFIX Bazni i priključni profil za sokl-teleskopski.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Bazni i priključni profil za unutrašnji i spoljašni ugao",
+        cena: 260,
+        slika: 'RÖFIX Bazni i priključni profil.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX ALU završni profil U-oblika",
+        cena: 260,
+        slika: 'RÖFIX ALU.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SP Universal Spojni profil sokla U-oblika",
+        cena: 260,
+        slika: 'RÖFIX SP Universal.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SOL-PAD Dichtbahn Traka za zaptivanje",
+        cena: 260,
+        slika: 'RÖFIX SOL-PAD.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SOL-PAD Ugaoni profil",
+        cena: 260,
+        slika: 'RÖFIX SOL-PAD Ugaoni profil.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SOL-PAD Sistem priključnih profila za prozorske klupice",
+        cena: 260,
+        slika: 'RÖFIX SOL-PAD Sistem priključnih profila.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SOL-PAD FB Izolaciona lajsna za kamene prozorske klupice debljine 20-30 mm",
+        cena: 260,
+        slika: 'RÖFIX SOL-PAD FB.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SOL-PAD Base Izolacioni element za prozorsku klupicu",
+        cena: 260,
+        slika: 'RÖFIX SOL-PAD Base.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX SOL-PAD Tool Alat za rezanje i brušenje",
+        cena: 260,
+        slika: 'RÖFIX SOL-PAD Tool.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX MINOPOR® 045 Toplotno-izolacioni sistem od mineralne pene",
+        cena: 260,
+        slika: 'RÖFIX MINOPOR 045.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX WOFITHERM - WOOD Toplotno-izolacioni sistem od drvenih vlakana",
+        cena: 260,
+        slika: 'RÖFIX WOFITHERM - WOOD.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX RENOTECT Univerzalna noseća ploča",
+        cena: 260,
+        slika: 'RÖFIX RENOTECT.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX AeroCalce® IG 996 AR-Nosiva mrežica",
+        cena: 260,
+        slika: 'RÖFIX AeroCalce IG 996.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "Fixit 223 Za RÖFIX Aerogel izolacijski sistem maltera",
+        cena: 260,
+        slika: 'Fixit 223.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "242 CalceClima® Thermo Plus Krečni toplotno-izolacioni malter",
+        cena: 260,
+        slika: '242 CalceClima Thermo Plus.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX MINOSTAR® Malter za lepljenje i armiranje",
+        cena: 260,
+        slika: 'RÖFIX MINOSTAR.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX APL 1D STANDARD Priključni profil za prozore",
+        cena: 260,
+        slika: 'RÖFIX APL 1D STANDARD.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Profilne makaze PRO za TIS plastične profile",
+        cena: 260,
+        slika: 'RÖFIX Profilne makaze PRO.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "ISOBOY Typ M-90/45°-R Univerzalni aparat za sečenje",
+        cena: 260,
+        slika: 'ISOBOY Typ.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX R12 Zubčasti gleter (TIS)",
+        cena: 260,
+        slika: 'RÖFIX R12.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX R16 Zubčasti gleter (TIS)",
+        cena: 260,
+        slika: 'RÖFIX R16.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX STR-H specijalni nastavak za postavljanje STR-H tiplova",
+        cena: 260,
+        slika: 'RÖFIX STR-H specijalni nastavak.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX RenEtics® 3D armaturna mreža TIS alati",
+        cena: 260,
+        slika: 'RÖFIX RenEtics 3D armaturna mreža.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX ND-K Vijak za pričvršćivanje",
+        cena: 260,
+        slika: 'RÖFIX ND-K.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Set za pričvršćivanje profila za sokl Set za pričvršćivanje profila za sokl",
+        cena: 260,
+        slika: 'RÖFIX Set za pričvršćivanje profila za sokl.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+    proizvod = {
+        ime: "RÖFIX Profil za atiku sa mrežicom Profil",
+        cena: 260,
+        slika: 'RÖFIX Profil za atiku sa mrežicom.webp',
+       tip: "Toplotni i izolacioni sistemi"
+    }
+    
+    proizvodi.push(proizvod);
+
+
     for(let i = 0; i < proizvodi.length;i++){
-        lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime} ${proizvodi[i].cena}din/m²</p></div>`;
+        lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" alt = "${proizvodi[i].ime}"> <p>${proizvodi[i].ime} ${proizvodi[i].cena}din/m²</p></div>`;
     }
     let f = (tip)=> {
       lista.innerHTML = ``;
