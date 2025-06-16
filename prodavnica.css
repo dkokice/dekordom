@@ -95,6 +95,7 @@ align-items: center;
 vertical-align: center;
 justify-content: space-around;
 height:50px;
+border-bottom: 1px solid #c3c7cd;
 
 }
 .filteri-bar div{
@@ -109,6 +110,10 @@ margin:0;
 text-align: center;
 
 }
+.filteri-bar div {
+font-size: 1.5vw;
+}
+
 .filteri-bar div:hover{
   cursor: pointer;
 }
@@ -151,15 +156,24 @@ border-right: 0;
     object-fit: contain;
   
   }
+  .artikli p{
+    font-size: 2.5vw;
+  }
   .naslov{
     width: 95vw;
     font-size: 5vw;
+  }
+  .filteri-bar div{
+    font-size: 2vw;
   }
 }
 @media(max-width: 800px){
   .artikli{
     grid-template-columns: 1fr 1fr ;
    
+  }
+  .artikli p{
+    font-size: 3vw;
   }
   .artikli div{
      width: 40vw;
@@ -171,11 +185,17 @@ border-right: 0;
     object-fit: contain;
   
   }
+  .filteri-bar div{
+    font-size: 2.3vw;
+  }
 }
 @media(max-width: 500px){
   .artikli{
     grid-template-columns: 1fr;
    
+  }
+  .artikli p{
+    font-size: 4vw;
   }
   .artikli div{
      width: 70vw;
@@ -186,6 +206,9 @@ border-right: 0;
     height: 78vw;
     object-fit: contain;
   
+  }
+  .filteri-bar div{
+    font-size: 3vw;
   }
 }
 html, body {
