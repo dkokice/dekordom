@@ -2572,7 +2572,7 @@ proizvod = {
 
 
     for(let i = 0; i < proizvodi.length;i++){
-        lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" alt = "${proizvodi[i].ime}"> <p>${proizvodi[i].ime} ${proizvodi[i].cena}din/m²</p></div>`;
+        lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" alt = "${proizvodi[i].ime}"> <p>${proizvodi[i].ime}</p></div>`;
     }
     let f = (tip)=> {
       lista.innerHTML = ``;
@@ -2585,7 +2585,7 @@ proizvod = {
     let f2 = ()=> {
         lista.innerHTML = ``;
         for(let i = 0; i < proizvodi.length;i++){
-            lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime} ${proizvodi[i].cena}din/m²</p></div>`;
+            lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime} </p></div>`;
         }
     }
 </script>
