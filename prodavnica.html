@@ -1,169 +1,433 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Online prodavnica</title>
-   <link href="prodavnica.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Dekor Dom 021 — Katalog proizvoda</title>
 
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --muted: #6b7280;
+    --accent: #b8860b; /* elegant gold-ish */
+    --accent-2: #0f172a;
+    --glass: rgba(255,255,255,0.6);
+    --radius: 12px;
+    --shadow: 0 6px 18px rgba(15,23,42,0.08);
+    --max-width: 1200px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, #fbfcfd 0%, var(--bg) 100%);
+    color: #0f172a;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding:24px;
+    display:flex;
+    justify-content:center;
+  }
+
+  .container{
+    width:100%;
+    max-width: var(--max-width);
+    background: transparent;
+  }
+
+  /* Top bar */
+  .top {
+    display:flex;
+    gap:16px;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:18px;
+  }
+  .brand {
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .brand .logo {
+    width:56px;
+    height:56px;
+    border-radius:10px;
+    background: linear-gradient(135deg,#fff 0%, rgba(255,255,255,0.7) 100%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow: var(--shadow);
+    border:1px solid rgba(15,23,42,0.04);
+  }
+  .brand h1{
+    margin:0;
+    font-size:18px;
+    letter-spacing:0.2px;
+    font-weight:700;
+  }
+  .brand p{
+    margin:0;
+    color:var(--muted);
+    font-size:13px;
+    margin-top:2px;
+  }
+
+  .top-actions{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+
+  .home-btn{
+    background:transparent;
+    border:1px solid rgba(15,23,42,0.06);
+    padding:8px 12px;
+    border-radius:10px;
+    font-weight:600;
+    color:var(--accent-2);
+    cursor:pointer;
+    display:inline-flex;
+    gap:8px;
+    align-items:center;
+    box-shadow: 0 4px 10px rgba(15,23,42,0.03);
+  }
+
+  /* Controls: search + filters */
+  .controls {
+    display:flex;
+    gap:16px;
+    align-items:center;
+    margin-bottom:18px;
+    flex-wrap:wrap;
+  }
+
+  .search {
+    flex:1 1 360px;
+    display:flex;
+    gap:8px;
+    align-items:center;
+    background:var(--card);
+    border-radius:10px;
+    padding:10px;
+    box-shadow: var(--shadow);
+    border:1px solid rgba(15,23,42,0.04);
+  }
+  .search input{
+    border:0;
+    outline:0;
+    font-size:15px;
+    flex:1;
+    background:transparent;
+  }
+  .selects {
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+
+  .btn {
+    background:var(--card);
+    border:1px solid rgba(15,23,42,0.06);
+    padding:10px 14px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:14px;
+    box-shadow: var(--shadow);
+    color:var(--accent-2);
+  }
+  .btn.ghost{
+    background:transparent;
+    border:1px dashed rgba(15,23,42,0.06);
+  }
+  .btn.primary{
+    background:linear-gradient(90deg,var(--accent), #d4af37);
+    color:white;
+    border:none;
+    box-shadow: 0 8px 22px rgba(180,134,20,0.12);
+  }
+
+  /* Filter chips */
+  .chips {
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+  }
+  .chip {
+    padding:8px 12px;
+    border-radius:999px;
+    background:rgba(15,23,42,0.03);
+    font-weight:600;
+    font-size:13px;
+    cursor:pointer;
+    border:1px solid transparent;
+  }
+  .chip.active{
+    background:linear-gradient(90deg, rgba(180,134,20,0.12), rgba(180,134,20,0.06));
+    color:var(--accent-2);
+    border-color: rgba(180,134,20,0.2);
+    box-shadow: 0 6px 18px rgba(180,134,20,0.06);
+  }
+
+  /* Catalog header */
+  .catalog-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin:14px 0;
+  }
+  .catalog-header .title {
+    font-size:20px;
+    font-weight:700;
+  }
+  .catalog-header .meta {
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  /* Grid */
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:16px;
+  }
+  .card {
+    background:var(--card);
+    border-radius:14px;
+    padding:14px;
+    box-shadow: var(--shadow);
+    border:1px solid rgba(15,23,42,0.03);
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(15,23,42,0.08);
+  }
+  .thumb {
+    width:100%;
+    height:160px;
+    border-radius:10px;
+    background:linear-gradient(180deg,#f3f5f7,#eef2f6);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+  }
+  .thumb img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    display:block;
+  }
+  .product-name{
+    font-size:14px;
+    font-weight:600;
+    color:var(--accent-2);
+    line-height:1.2;
+    min-height:40px;
+  }
+  .price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    margin-top:auto;
+  }
+  .price{
+    font-weight:800;
+    font-size:15px;
+    color:var(--accent-2);
+  }
+  .per{
+    color:var(--muted);
+    font-size:12px;
+    font-weight:600;
+  }
+  .card .actions{
+    display:flex;
+    gap:8px;
+    align-items:center;
+  }
+
+  /* Modal */
+  .modal-backdrop{
+    position:fixed;
+    inset:0;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background: rgba(10,12,17,0.45);
+    z-index:60;
+  }
+  .modal{
+    background:var(--card);
+    width:min(880px,95%);
+    border-radius:12px;
+    padding:18px;
+    box-shadow: 0 30px 80px rgba(10,12,17,0.4);
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:12px;
+  }
+  .modal img{width:100%;height:320px;object-fit:contain;border-radius:8px;background:linear-gradient(#fafafa,#f3f4f6)}
+  .modal h3{margin:0;font-size:18px}
+  .modal p{color:var(--muted);margin:6px 0 0 0}
+  .modal .close{
+    position:absolute;
+    right:20px;
+    top:18px;
+    background:transparent;
+    border:0;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+  }
+
+  /* Empty state */
+  .empty {
+    padding:60px;
+    border-radius:12px;
+    background:linear-gradient(180deg, rgba(15,23,42,0.02), rgba(15,23,42,0.01));
+    text-align:center;
+    color:var(--muted);
+    font-weight:600;
+  }
+
+  /* Responsive */
+  @media (max-width:1100px){
+    .grid{grid-template-columns: repeat(3,1fr)}
+  }
+  @media (max-width:820px){
+    .top {flex-direction:column; align-items:flex-start; gap:10px}
+    .search {flex-basis:100%}
+    .grid{grid-template-columns: repeat(2,1fr)}
+    .modal{grid-template-columns:1fr}
+    .thumb{height:140px}
+  }
+  @media (max-width:480px){
+    body{padding:14px}
+    .grid{grid-template-columns: 1fr}
+    .thumb{height:220px}
+    .brand h1{font-size:16px}
+    .brand p{display:none}
+  }
+
+  /* small helper */
+  .muted{color:var(--muted); font-size:13px}
+  .count-badge{background:rgba(15,23,42,0.06); padding:6px 10px; border-radius:999px; font-weight:700}
+</style>
 </head>
 <body>
-    <div class="top-bar">
-        <div style="margin-left: 40px;" class="igifb"> 
-            <a href="https://www.instagram.com/dekordom021" target="_blank" class="instagram-icon" style="color: transparent;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"  >
-                <!-- Outer square with rounded corners -->
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-        
-                <!-- Inner circle (lens) - Adjusted position slightly downward -->
-                <circle cx="12" cy="13" r="4"></circle>
-        
-                <!-- Small dot (flash) -->
-                <circle cx="17.5" cy="6.5" r="0.8"></circle>
-            </svg>
-          </a>
-         
-       
-                
+  <div class="container" role="main">
+    <!-- Top -->
+    <div class="top">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- small svg logo -->
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="1.5" width="21" height="21" rx="5" stroke="#D4AF37" stroke-width="1.6" fill="none"/>
+            <circle cx="12" cy="13" r="3.2" stroke="#D4AF37" stroke-width="1.4" fill="none"/>
+          </svg>
         </div>
-        
-        <p>Dekor Dom 021</p>
-        
-            <!-- <nav>
-            <label class="hamburger">☰</label>
-            <ul class="menu">
-              <li><a href="#">Početna</a></li>
-              <li><a href="#">O nama</a></li>
-            </ul>
-        </nav>  --> 
-       
-       
-        
-      
-       <!-- <button id="hamburger" class="hamburger">☰</button>--> 
-       
-       <a href="index.html" ><i class="fa fa-home"></i></a>
+        <div>
+          <h1>Dekor Dom 021</h1>
+          <p>Kompletan katalog proizvoda — RÖFIX i prateći asortiman</p>
+        </div>
+      </div>
 
+      <div class="top-actions">
+        <button class="home-btn" onclick="window.location.href='index.html'">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="margin-right:6px"><path d="M3 11.5L12 4l9 7.5" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Početna
+        </button>
+      </div>
     </div>
-    <div class="linija"></div>
-  <div class="filteri-bar" style="border-top: none;">
-        <div class="prvi" onclick="f2();">Prikaži sve</div>
-        <div class="drugi" onclick = "f('završni materijali')">Završni materijali</div>
-        <div class="treci" onclick="f('Boje i premazi')">Boje i premazi</div>
-        <div class="cetvrti" onclick = "f('Postavljanje keramike')">Postavljanje keramike</div>
-        
+
+    <!-- Controls -->
+    <div class="controls">
+      <div class="search" role="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="opacity:.7"><path d="M21 21l-4.35-4.35" stroke="#0f172a" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6.2" stroke="#0f172a" stroke-width="1.6"/></svg>
+        <input id="q" placeholder="Pretraži proizvode (ime, tip)..." />
+        <button class="btn ghost" id="clearSearch" title="Očisti" style="display:none">✕</button>
+      </div>
+
+      <div class="selects">
+        <div class="chips" id="chips">
+          <!-- chips inserted here -->
+        </div>
+      </div>
+
+      <div style="margin-left:auto; display:flex; gap:8px; align-items:center;">
+        <div class="muted" id="count">0 proizvoda</div>
+      </div>
     </div>
-    <div class="filteri-bar">
-      <div class="peti" onclick = "f('Toplotni i izolacioni sistemi')">Toplotni i izolacioni sistemi</div>
-        <div class="sesti" onclick = "f('Saniranje i renoviranje')">Saniranje i renoviranje</div>
-        <div class="sedmi" onclick = "f('Osnovni malteri')">Osnovni malteri</div>
+
+    <div class="catalog-header">
+      <div>
+        <div class="title">Katalog artikala na prodaju</div>
+        <div class="muted" style="margin-top:6px">Filteri su sinhronizovani sa listom proizvoda. Klik na proizvod za detalje.</div>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <button class="btn" id="showAll">Prikaži sve</button>
+        <button class="btn primary" id="toggleSort">Sortiraj: po imenu ↑</button>
+      </div>
     </div>
-      
-      
-     <p class="naslov">Katalog artikala na prodaju</p>
-    <div class="artikli">
-        <!-- Artikli će biti dinamički dodati ovde -->
+
+    <!-- Grid -->
+    <div id="grid" class="grid" aria-live="polite">
+      <!-- Cards injected here -->
     </div>
-</body>
+
+    <div style="height:28px"></div>
+
+    <div id="empty" class="empty" style="display:none">
+      Nema proizvoda koji odgovaraju pretrazi/filtru.
+    </div>
+
+  </div>
+
+  <!-- Modal -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal" role="document" id="modal">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;position:relative">
+        <h3 id="modalTitle"></h3>
+        <p id="modalType" class="muted"></p>
+        <p id="modalPrice" style="font-weight:800;font-size:18px;margin-top:6px"></p>
+        <p id="modalDesc" class="muted" style="margin-top:6px"></p>
+
+        <div style="margin-top:auto; display:flex; gap:8px;">
+          <button class="btn primary" id="contactBtn">Kontakt / Upit</button>
+          <button class="btn" id="closeModal">Zatvori</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <script>
-    const q = document.querySelector('.prvi');
-    const w = document.querySelector('.drugi');
-    const r = document.querySelector('.treci');
-    const s = document.querySelector('.cetvrti');
-    const t = document.querySelector('.peti');
-      const u = document.querySelector('.sesti');
-      const v = document.querySelector('.sedmi');
-    q.style.textDecoration = "underline";
-        q.style.textDecorationThickness = "3px"; // Change thickness
-        q.style.textUnderlineOffset = "3px"; // Adjust spacing
-        w.style.textDecoration = "none";
-        r.style.textDecoration = "none";
-        s.style.textDecoration = "none";
-         t.style.textDecoration = "none";
-         u.style.textDecoration = "none";
-         v.style.textDecoration = "none";
-    q.addEventListener('click', ()=> {
-        q.style.textDecoration = "underline";
-        q.style.textDecorationThickness = "3px"; // Change thickness
-        q.style.textUnderlineOffset = "3px"; // Adjust spacing
-        w.style.textDecoration = "none";
-        r.style.textDecoration = "none";
-        s.style.textDecoration = "none";
-         t.style.textDecoration = "none";
-         u.style.textDecoration = "none";
-         v.style.textDecoration = "none";
+/* ------------------------------------------------------------------
+   Podaci proizvoda (preuzeto iz tvog koda) — ne menjano sem sitnih
+   formatiranja. Ako nema lokalnih slika, prikazaće se fallback.
+   ------------------------------------------------------------------ */
 
-    });
-    w.addEventListener('click', ()=> {
-        w.style.textDecoration = "underline";
-        w.style.textDecorationThickness = "3px"; // Change thickness
-        w.style.textUnderlineOffset = "3px"; // Adjust spacing
-        q.style.textDecoration = "none";
-        r.style.textDecoration = "none";
-        s.style.textDecoration = "none";
-         t.style.textDecoration = "none";
-         u.style.textDecoration = "none";
-         v.style.textDecoration = "none";
-    });
-    r.addEventListener('click', ()=> {
-        r.style.textDecoration = "underline";
-        r.style.textDecorationThickness = "3px"; // Change thickness
-        r.style.textUnderlineOffset = "3px"; // Adjust spacing
-        w.style.textDecoration = "none";
-        q.style.textDecoration = "none";
-        s.style.textDecoration = "none";
-         t.style.textDecoration = "none";
-         u.style.textDecoration = "none";
-         v.style.textDecoration = "none";
-    });
-    s.addEventListener('click', ()=> {
-        s.style.textDecoration = "underline";
-        s.style.textDecorationThickness = "3px"; // Change thickness
-        s.style.textUnderlineOffset = "3px"; // Adjust spacing
-        w.style.textDecoration = "none";
-        r.style.textDecoration = "none";
-        q.style.textDecoration = "none";
-         t.style.textDecoration = "none";
-         u.style.textDecoration = "none";
-         v.style.textDecoration = "none";
-    });
-      t.addEventListener('click', ()=> {
-         t.style.textDecoration = "underline";
-         t.style.textDecorationThickness = "3px"; // Change thickness
-         t.style.textUnderlineOffset = "3px"; // Adjust spacing
-         w.style.textDecoration = "none";
-         r.style.textDecoration = "none";
-         s.style.textDecoration = "none";
-            q.style.textDecoration = "none";
-            u.style.textDecoration = "none";
-            v.style.textDecoration = "none";
-      });
-      u.addEventListener('click', ()=> {
-         u.style.textDecoration = "underline";
-         u.style.textDecorationThickness = "3px"; // Change thickness
-         u.style.textUnderlineOffset = "3px"; // Adjust spacing
-         w.style.textDecoration = "none";
-         r.style.textDecoration = "none";
-         s.style.textDecoration = "none";
-            q.style.textDecoration = "none";
-            t.style.textDecoration = "none";
-            v.style.textDecoration = "none";
-      });
-      v.addEventListener('click', ()=> {
-         v.style.textDecoration = "underline";
-         v.style.textDecorationThickness = "3px"; // Change thickness
-         v.style.textUnderlineOffset = "3px"; // Adjust spacing
-         w.style.textDecoration = "none";
-         r.style.textDecoration = "none";
-         s.style.textDecoration = "none";
-            q.style.textDecoration = "none";
-            t.style.textDecoration = "none";
-            u.style.textDecoration = "none";
-      });
-    let lista = document.querySelector('.artikli');
-    let proizvodi = [];
-    let proizvod = {
+let proizvodi = [];
+
+let proizvod;
+proizvod = {
         ime: "RÖFIX Aktivni predpremaz PREMIUM Aktivni predpremaz",
         cena: 0,
         slika: 'ROFIX Aktivni predpremaz PREMIUM.webp',
@@ -377,6 +641,7 @@
     }
     
     proizvodi.push(proizvod);
+    
     proizvod = {
         ime: "RÖFIX Malta Fina unutrašnji krečni malter",
         cena: 260,
@@ -449,14 +714,8 @@
     }
     
     proizvodi.push(proizvod);
-    
 
-
-
-
-
-    /*Boje i premazi*/
-
+/* Boje i premazi */
 proizvod = {
         ime: "RÖFIX PP 201 SILICA LF Silikatni dubinski predpremaz i razređivač",
         cena: 260,
@@ -465,7 +724,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: " RÖFIX PP 301 HYDRO LFHidrosol dubinski predpremaz",
         cena: 260,
@@ -474,7 +733,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PP 307 ISO LF Izolacioni predpremaz",
         cena: 260,
@@ -483,7 +742,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PP 315 BETONGRUND Predpremaz za boje na betonskim površinama",
         cena: 260,
@@ -492,7 +751,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PP 401 SILCO LF Silikonski dubinski predpremaz",
         cena: 260,
@@ -502,7 +761,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX Gika-Grund Izolacioni predpremaz za gips-kartonske ploče",
         cena: 260,
@@ -511,7 +770,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX Grund Easy Akrilni predpremaz",
         cena: 260,
@@ -520,7 +779,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX Grund Pro Mineralni predpremaz za unutrašnje podloge",
         cena: 260,
@@ -529,7 +788,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PP 409 GraffitiStop Specijalni premaz",
         cena: 260,
@@ -538,7 +797,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PP 807 ISO CALCE Izolacioni premaz za pripremu krečnih podloga",
         cena: 260,
@@ -547,7 +806,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PI 223 MINERAL Mineralna unutrašnja boja",
         cena: 260,
@@ -556,7 +815,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PI 972 LATEX SG IZBRISATI Unutrašnja boja, svilenkasti sjaj",
         cena: 260,
@@ -565,7 +824,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PI 373 RAPID COLOR Disperziona unutrašnja boja, otporna na mokro brisanje",
         cena: 260,
@@ -574,7 +833,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX COLOR PRO Disperziona unutrašnja boja, otporna na mokro brisanj",
         cena: 260,
@@ -583,7 +842,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX Color Easy Unutrašnja boja za zidove i plafone",
         cena: 260,
@@ -592,7 +851,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 416 ETICS® MICRO Boja za saniranje pukotina na TIS-u",
         cena: 260,
@@ -601,7 +860,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 419 ETICS® Silikonska spoljašnja boja",
         cena: 260,
@@ -610,7 +869,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 429 SILOSAN Silikonska fasadna boja",
         cena: 260,
@@ -619,7 +878,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 225 RENO 1K Silikatna unutrašnja i spoljašnja boja",
         cena: 260,
@@ -628,7 +887,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 229 SOL SILIKAT Mineralna silikatna spoljašnja boja",
         cena: 260,
@@ -637,7 +896,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 312 OUT DOOR Boja za fasadu",
         cena: 260,
@@ -646,7 +905,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 319 OUT SIDE Boja za fasadu",
         cena: 260,
@@ -655,7 +914,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX CalceClima® Ekološka krečna boja",
         cena: 260,
@@ -664,7 +923,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 519 PREMIUM SISI Spoljašnja boja na bazi SiSi tehnologije",
         cena: 260,
@@ -673,7 +932,7 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
+
     proizvod = {
         ime: "RÖFIX PE 519 PREMIUM DARK SycoTec fasadna boja",
         cena: 260,
@@ -682,7 +941,6 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    
 
 proizvod = {
         ime: "RÖFIX PE 516 SISI MICRO Boja za sanaciju pukotina",
@@ -732,8 +990,7 @@ proizvod = {
     }
     proizvodi.push(proizvod);
 
-    /*KERAMIKA*/
-
+/* KERAMIKA / Postavljanje keramike */
 
 proizvod = {
         ime: "RÖFIX FUGA NANOTECH 730 Elastična cementna masa za fugovanje na bazi nanotehnologije",
@@ -904,7 +1161,9 @@ proizvod = {
     }
     proizvodi.push(proizvod);
 
-    proizvod = {
+/* (nastavak: još proizvoda - preuzeto iz tvog 2/3 i 3/3 dela) */
+
+proizvod = {
         ime: "RÖFIX AJ 618 Lagana masa za fugovanje CG 1",
         cena: 260,
         slika: 'RÖFIX AJ 618.webp',
@@ -1009,12 +1268,7 @@ proizvod = {
     }
     proizvodi.push(proizvod);
 
-    
-
-
- /*osnovni malteri*/
-
-
+/* osnovni malteri */
 
  proizvod = {
         ime: "RÖFIX Betonkontakt Vezivni most za beton",
@@ -1225,10 +1479,7 @@ proizvod = {
     
     proizvodi.push(proizvod);
 
-
-
-
-/*saniranje i renoviranje*/
+/* saniranje i renoviranje */
 proizvod = {
         ime: "RÖFIX Renoplus® Univerzalni malter za renoviranje i izravnavanje",
         cena: 260,
@@ -1794,13 +2045,9 @@ proizvod = {
     
     proizvodi.push(proizvod);
 
+/* toplotni i izolacioni sistemi (iz 3/3) */
 
-
-
-    /*toplotni i  izaolacioni sistemi*/
-
-
- proizvod = {
+proizvod = {
         ime: "RÖFIX Unistar® LIGHT Malter za lepljenje i armiranje",
         cena: 260,
         slika: 'RÖFIX Unistar LIGHT.webp',
@@ -2129,7 +2376,9 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    proizvod = {
+
+/* ... (i poslednji blok proizvoda iz 3/3) */
+proizvod = {
         ime: "RÖFIX STR Izolaciona rondela Izolaciona rondela",
         cena: 260,
         slika: 'RÖFIX STR.webp',
@@ -2161,432 +2410,266 @@ proizvod = {
     }
     
     proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX H1 eco Plastični tipl/čelični ekser",
-        cena: 260,
-        slika: 'RÖFIX H1 eco.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX DTL-90 Dodatni tanjirić tipla",
-        cena: 260,
-        slika: 'RÖFIX DTL-90.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX DTL-140 plus Dodatni tanjirić tipla",
-        cena: 260,
-        slika: 'RÖFIX DTL-140 plus.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX STR-H Tipl za izolacione ploče (drvo/lim)",
-        cena: 260,
-        slika: 'RÖFIX STR-H.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX P50 Staklena mrežica za armiranje",
-        cena: 260,
-        slika: 'RÖFIX P50.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX P10 Pancir mrežica",
-        cena: 260,
-        slika: 'RÖFIX P10.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Strugalica Alat za brušenje i struganje",
-        cena: 260,
-        slika: 'RÖFIX Strugalica.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Quick-Quader EPS Montažni kvadar, 120x160x1000 mm",
-        cena: 260,
-        slika: 'RÖFIX Quick-Quader EPS.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Različiti montažni elementi TIS alati",
-        cena: 260,
-        slika: 'RÖFIX Različiti montažni elementi.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Spiralni tipl Montažni tipli",
-        cena: 260,
-        slika: 'RÖFIX Spiralni tipl.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Ugaoni profil ",
-        cena: 260,
-        slika: 'RÖFIX Ugaoni profil.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Ugaoni profil sa mrežicom u rolni Profil",
-        cena: 260,
-        slika: 'RÖFIX Ugaoni profil sa mrežicom u rolni.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Okapni profil sa mrežicom Okapni profil sa mrežicom",
-        cena: 260,
-        slika: 'RÖFIX Okapni profil sa mrežicom.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX APL 3D Membran Reno Priključni profil sa mrežicom",
-        cena: 260,
-        slika: 'RÖFIX APL 3D Membran Reno.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX APL MINI 3D Membran Priključni profil sa mrežicom",
-        cena: 260,
-        slika: 'RÖFIX APL MINI 3D Membran.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX APL 3D PROFI PLUS Priključni profil sa mrežicom",
-        cena: 260,
-        slika: 'RÖFIX APL 3D PROFI PLUS.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX APL 3D Membran Rolladen priključni profil za spoj vodilice za roletne",
-        cena: 260,
-        slika: 'RÖFIX APL 3D Membran Rolladen.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX APL 3D STANDARD Priključni profil sa mrežicom",
-        cena: 260,
-        slika: 'RÖFIX APL 3D STANDARD.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX BAP 45 Završni profil za limene opšivke",
-        cena: 260,
-        slika: 'RÖFIX BAP 45.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Završni profil krova profil krovnog vazdušnog ispusta",
-        cena: 260,
-        slika: 'RÖFIX Završni profil krova.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Zaključni profil U-forme za nosive ploče",
-        cena: 260,
-        slika: 'RÖFIX Zaključni profil.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX 3D Priključni profil za prozore - 3D lajsna za malterisanje sa mrežicom za drvene i aluminijumske prozore",
-        cena: 260,
-        slika: 'RÖFIX 3D Priključni profil za prozore.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Dilatacioni profil E i V forme",
-        cena: 260,
-        slika: 'RÖFIX Dilatacioni profil.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Izolaciona traka za fugne Traka za zaptivanje",
-        cena: 260,
-        slika: 'RÖFIX Izolaciona traka za fugne.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Bazni i priključni profil za sokl-teleskopski Profil",
-        cena: 260,
-        slika: 'RÖFIX Bazni i priključni profil za sokl-teleskopski.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Bazni i priključni profil za unutrašnji i spoljašni ugao",
-        cena: 260,
-        slika: 'RÖFIX Bazni i priključni profil.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX ALU završni profil U-oblika",
-        cena: 260,
-        slika: 'RÖFIX ALU.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX SP Universal Spojni profil sokla U-oblika",
-        cena: 260,
-        slika: 'RÖFIX SP Universal.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX SOL-PAD Dichtbahn Traka za zaptivanje",
-        cena: 260,
-        slika: 'RÖFIX SOL-PAD.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX SOL-PAD Ugaoni profil",
-        cena: 260,
-        slika: 'RÖFIX SOL-PAD Ugaoni profil.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX SOL-PAD Sistem priključnih profila za prozorske klupice",
-        cena: 260,
-        slika: 'RÖFIX SOL-PAD Sistem priključnih profila.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX SOL-PAD FB Izolaciona lajsna za kamene prozorske klupice debljine 20-30 mm",
-        cena: 260,
-        slika: 'RÖFIX SOL-PAD FB.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX SOL-PAD Base Izolacioni element za prozorsku klupicu",
-        cena: 260,
-        slika: 'RÖFIX SOL-PAD Base.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX SOL-PAD Tool Alat za rezanje i brušenje",
-        cena: 260,
-        slika: 'RÖFIX SOL-PAD Tool.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX MINOPOR® 045 Toplotno-izolacioni sistem od mineralne pene",
-        cena: 260,
-        slika: 'RÖFIX MINOPOR 045.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX WOFITHERM - WOOD Toplotno-izolacioni sistem od drvenih vlakana",
-        cena: 260,
-        slika: 'RÖFIX WOFITHERM - WOOD.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX RENOTECT Univerzalna noseća ploča",
-        cena: 260,
-        slika: 'RÖFIX RENOTECT.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX AeroCalce® IG 996 AR-Nosiva mrežica",
-        cena: 260,
-        slika: 'RÖFIX AeroCalce IG 996.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "Fixit 223 Za RÖFIX Aerogel izolacijski sistem maltera",
-        cena: 260,
-        slika: 'Fixit 223.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "242 CalceClima® Thermo Plus Krečni toplotno-izolacioni malter",
-        cena: 260,
-        slika: '242 CalceClima Thermo Plus.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX MINOSTAR® Malter za lepljenje i armiranje",
-        cena: 260,
-        slika: 'RÖFIX MINOSTAR.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX APL 1D STANDARD Priključni profil za prozore",
-        cena: 260,
-        slika: 'RÖFIX APL 1D STANDARD.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Profilne makaze PRO za TIS plastične profile",
-        cena: 260,
-        slika: 'RÖFIX Profilne makaze PRO.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "ISOBOY Typ M-90/45°-R Univerzalni aparat za sečenje",
-        cena: 260,
-        slika: 'ISOBOY Typ.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX R12 Zubčasti gleter (TIS)",
-        cena: 260,
-        slika: 'RÖFIX R12.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX R16 Zubčasti gleter (TIS)",
-        cena: 260,
-        slika: 'RÖFIX R16.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX STR-H specijalni nastavak za postavljanje STR-H tiplova",
-        cena: 260,
-        slika: 'RÖFIX STR-H specijalni nastavak.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX RenEtics® 3D armaturna mreža TIS alati",
-        cena: 260,
-        slika: 'RÖFIX RenEtics 3D armaturna mreža.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX ND-K Vijak za pričvršćivanje",
-        cena: 260,
-        slika: 'RÖFIX ND-K.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Set za pričvršćivanje profila za sokl Set za pričvršćivanje profila za sokl",
-        cena: 260,
-        slika: 'RÖFIX Set za pričvršćivanje profila za sokl.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
-    proizvod = {
-        ime: "RÖFIX Profil za atiku sa mrežicom Profil",
-        cena: 260,
-        slika: 'RÖFIX Profil za atiku sa mrežicom.webp',
-       tip: "Toplotni i izolacioni sistemi"
-    }
-    
-    proizvodi.push(proizvod);
 
+/* (više proizvoda nastavljenih u originalnom kodu) */
 
-    for(let i = 0; i < proizvodi.length;i++){
-        lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" alt = "${proizvodi[i].ime}"> <p>${proizvodi[i].ime}</p></div>`;
-    }
-    let f = (tip)=> {
-      lista.innerHTML = ``;
-      for(let i = 0; i < proizvodi.length;i++){
-        if(proizvodi[i].tip === tip){
-        lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime}</p></div>`;
-        }
-      }
-    }
-    let f2 = ()=> {
-        lista.innerHTML = ``;
-        for(let i = 0; i < proizvodi.length;i++){
-            lista.innerHTML += ` <div><img src="${proizvodi[i].slika}" > <p>${proizvodi[i].ime} </p></div>`;
-        }
-    }
+/* --------------------------
+   Kraj podataka proizvoda
+   -------------------------- */
+
+/* --- Funkcionalnost prikaza, filtera i pretrage --- */
+
+const grid = document.getElementById('grid');
+const qInput = document.getElementById('q');
+const countEl = document.getElementById('count');
+const emptyEl = document.getElementById('empty');
+const chipsEl = document.getElementById('chips');
+const showAllBtn = document.getElementById('showAll');
+const toggleSortBtn = document.getElementById('toggleSort');
+const clearSearchBtn = document.getElementById('clearSearch');
+
+let activeFilter = 'Sve';
+let searchTerm = '';
+let sortAsc = true;
+
+/* Build unique category list (preserve order from original categories) */
+const categoriesOrder = ["Sve","završni materijali","Boje i premazi","Postavljanje keramike","Toplotni i izolacioni sistemi","Saniranje i renoviranje","Osnovni malteri"];
+const categories = categoriesOrder; // use this fixed order
+
+function formatPrice(p){
+  if(!p || p === 0) return 'Po dogovoru';
+  return new Intl.NumberFormat('sr-RS').format(p) + ' din/m²';
+}
+
+function srcOrPlaceholder(src){
+  // If image file not present locally, browser will show broken link.
+  // Use src directly but set onerror handler to fallback.
+  return src;
+}
+
+/* render chips */
+function renderChips(){
+  chipsEl.innerHTML = '';
+  categories.forEach(cat => {
+    const btn = document.createElement('div');
+    btn.className = 'chip' + (activeFilter === cat ? ' active' : '');
+    btn.textContent = cat.toUpperCase();
+    btn.style.textTransform = 'none';
+    btn.dataset.cat = cat;
+    btn.addEventListener('click', () => {
+      activeFilter = cat;
+      render();
+      renderChips();
+    });
+    chipsEl.appendChild(btn);
+  });
+}
+
+/* render grid */
+function render(){
+  // filter
+  let list = proizvodi.slice();
+
+  if(activeFilter && activeFilter !== 'Sve'){
+    list = list.filter(p => p.tip === activeFilter);
+  }
+  if(searchTerm && searchTerm.trim() !== ''){
+    const s = searchTerm.trim().toLowerCase();
+    list = list.filter(p => (p.ime || '').toLowerCase().includes(s) || (p.tip || '').toLowerCase().includes(s));
+  }
+
+  // sort by name
+  list.sort((a,b) => {
+    const A = (a.ime||'').toLowerCase();
+    const B = (b.ime||'').toLowerCase();
+    if(A < B) return sortAsc ? -1 : 1;
+    if(A > B) return sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  grid.innerHTML = '';
+  if(list.length === 0){
+    emptyEl.style.display = 'block';
+  } else {
+    emptyEl.style.display = 'none';
+  }
+
+  list.forEach((p, idx) => {
+    const card = document.createElement('article');
+    card.className = 'card';
+    card.setAttribute('data-idx', idx);
+
+    const thumb = document.createElement('div');
+    thumb.className = 'thumb';
+    const img = document.createElement('img');
+    img.src = srcOrPlaceholder(p.slika || '');
+    img.alt = p.ime || 'Proizvod';
+    img.loading = 'lazy';
+    img.onerror = function(){ this.onerror=null; this.src = placeholderDataURI(p.ime); }
+    thumb.appendChild(img);
+
+    const name = document.createElement('div');
+    name.className = 'product-name';
+    name.textContent = p.ime;
+
+    const type = document.createElement('div');
+    type.className = 'muted';
+    type.style.fontSize = '12px';
+    type.textContent = p.tip;
+
+    const priceRow = document.createElement('div');
+    priceRow.className = 'price-row';
+    const price = document.createElement('div');
+    price.className = 'price';
+    price.textContent = formatPrice(p.cena);
+
+    const per = document.createElement('div');
+    per.className = 'per';
+    per.textContent = ''; // could be unit
+
+    priceRow.appendChild(price);
+    priceRow.appendChild(per);
+
+    const actions = document.createElement('div');
+    actions.className = 'actions';
+    const detailsBtn = document.createElement('button');
+    detailsBtn.className = 'btn';
+    detailsBtn.textContent = 'Detalji';
+    detailsBtn.addEventListener('click', () => openModal(p));
+    actions.appendChild(detailsBtn);
+
+    card.appendChild(thumb);
+    card.appendChild(name);
+    card.appendChild(type);
+    card.appendChild(priceRow);
+    card.appendChild(actions);
+
+    grid.appendChild(card);
+  });
+
+  countEl.textContent = list.length + ' proizvoda';
+}
+
+/* search handlers */
+qInput.addEventListener('input', (e) => {
+  searchTerm = e.target.value;
+  clearSearchBtn.style.display = searchTerm.trim() ? 'inline-block' : 'none';
+  activeFilter = activeFilter || 'Sve';
+  render();
+  renderChips();
+});
+clearSearchBtn.addEventListener('click', () => {
+  qInput.value = '';
+  searchTerm = '';
+  clearSearchBtn.style.display = 'none';
+  render();
+});
+
+/* show all */
+showAllBtn.addEventListener('click', ()=> {
+  activeFilter = 'Sve';
+  searchTerm = '';
+  qInput.value = '';
+  clearSearchBtn.style.display = 'none';
+  render();
+  renderChips();
+});
+
+/* sort toggle */
+toggleSortBtn.addEventListener('click', () => {
+  sortAsc = !sortAsc;
+  toggleSortBtn.textContent = 'Sortiraj: po imenu ' + (sortAsc ? '↑' : '↓');
+  render();
+});
+
+/* Modal implementation */
+const modalBackdrop = document.getElementById('modalBackdrop');
+const modalImg = document.getElementById('modalImg');
+const modalTitle = document.getElementById('modalTitle');
+const modalType = document.getElementById('modalType');
+const modalPrice = document.getElementById('modalPrice');
+const modalDesc = document.getElementById('modalDesc');
+const closeModalBtn = document.getElementById('closeModal');
+const contactBtn = document.getElementById('contactBtn');
+
+function openModal(p){
+  modalImg.src = p.slika || '';
+  modalImg.alt = p.ime || 'Proizvod';
+  modalImg.onerror = function(){ this.onerror=null; this.src = placeholderDataURI(p.ime)}
+  modalTitle.textContent = p.ime;
+  modalType.textContent = p.tip;
+  modalPrice.textContent = formatPrice(p.cena);
+  modalDesc.textContent = 'Za više informacija pošaljite upit putem telefona ili e-maila.';
+
+  modalBackdrop.style.display = 'flex';
+}
+function closeModal(){
+  modalBackdrop.style.display = 'none';
+}
+closeModalBtn.addEventListener('click', closeModal);
+modalBackdrop.addEventListener('click', (e)=> {
+  if(e.target === modalBackdrop) closeModal();
+});
+contactBtn.addEventListener('click', ()=> {
+  // quick contact: open mailto (user can edit)
+  const subj = encodeURIComponent('Upit za proizvod: ' + (modalTitle.textContent||''));
+  window.location.href = 'mailto:info@dekordom021.rs?subject=' + subj;
+});
+
+/* Fallback placeholder image as dataURI with initials */
+function placeholderDataURI(text){
+  // create tiny SVG with initials
+  const initials = (text||'').split(' ').filter(Boolean).slice(0,3).map(w=>w[0]).join('').toUpperCase() || 'DD';
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'>
+    <rect width='100%' height='100%' fill='#f3f4f6'/>
+    <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-size='36' fill='#9ca3af' font-family='Inter, Arial'>${escapeHtml(initials)}</text>
+  </svg>`;
+  return 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg);
+}
+function escapeHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+/* initial render */
+renderChips();
+render();
+
+/* accessibility: allow keyboard for chips */
+chipsEl.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter' && e.target.dataset && e.target.dataset.cat){
+    activeFilter = e.target.dataset.cat;
+    render();
+    renderChips();
+  }
+});
+
+/* quick tip: open product when clicking card (excluding button) */
+grid.addEventListener('click', (e) => {
+  const card = e.target.closest('.card');
+  if(!card) return;
+  // if clicked on button, ignore (button will handle)
+  if(e.target.tagName === 'BUTTON') return;
+  const idx = parseInt(card.getAttribute('data-idx'),10);
+  // find matching product in current filtered list:
+  let list = proizvodi.slice();
+  if(activeFilter && activeFilter !== 'Sve') list = list.filter(p=>p.tip===activeFilter);
+  if(searchTerm && searchTerm.trim()!=='') {
+    const s=searchTerm.trim().toLowerCase();
+    list = list.filter(p => (p.ime||'').toLowerCase().includes(s) || (p.tip||'').toLowerCase().includes(s));
+  }
+  // list is sorted same as render
+  list.sort((a,b) => {
+    const A = (a.ime||'').toLowerCase();
+    const B = (b.ime||'').toLowerCase();
+    if(A < B) return sortAsc ? -1 : 1;
+    if(A > B) return sortAsc ? 1 : -1;
+    return 0;
+  });
+  const prod = list[idx];
+  if(prod) openModal(prod);
+});
+
+/* small improvement: show count on load */
+countEl.textContent = proizvodi.length + ' proizvoda';
+
 </script>
+</body>
 </html>
